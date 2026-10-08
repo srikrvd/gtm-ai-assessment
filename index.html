@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GTM AI Self-Assessment</title>
+<meta name="description" content="A 10-minute self-assessment for go-to-market teams: find your workflow strengths, where AI can give you time back, and your recommended AI Day breakout.">
+<meta name="theme-color" content="#4f46e5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#4f46e5; --accent-600:#4338ca; --accent-700:#3730a3; --accent-50:#eef2ff; --accent-100:#e0e7ff; --accent-200:#c7d2fe;
+  --teal:#0f766e; --teal-50:#f0fdfa; --teal-100:#ccfbf1;
+  --amber:#b45309; --amber-50:#fffbeb; --amber-100:#fef3c7;
+  --ink:#0f172a; --ink-2:#1e293b; --muted:#475569; --muted-2:#64748b; --line:#e2e8f0; --line-2:#cbd5e1;
+  --bg:#f8fafc; --card:#ffffff; --good:#047857; --good-50:#ecfdf5; --bad:#b91c1c; --bad-50:#fef2f2;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 1px 2px rgba(15,23,42,.05),0 4px 16px rgba(15,23,42,.06);
+  --shadow-lg:0 2px 4px rgba(15,23,42,.05),0 12px 32px rgba(15,23,42,.10);
+  --font:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.5;font-size:16px;
+  background:radial-gradient(1100px 520px at 50% -120px,#e0e7ff 0%,rgba(224,231,255,0) 70%),radial-gradient(700px 420px at 100% 0,#ccfbf1 0%,rgba(204,251,241,0) 70%),#f6f8fc;background-repeat:no-repeat;min-height:100vh;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-600)}
+h1,h2,h3,h4{line-height:1.2;margin:0;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1040px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:15px;background:none;border:0;padding:4px;cursor:pointer;font-family:inherit}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),#0d9488);display:grid;place-items:center;color:#fff;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-50);color:var(--accent-700);white-space:nowrap}
+.pill.teal{background:var(--teal-50);color:var(--teal)}
+.pill.amber{background:var(--amber-50);color:var(--amber)}
+.progress-wrap{height:4px;background:transparent}
+.progress{height:4px;background:linear-gradient(90deg,var(--accent),#0d9488);width:0;transition:width .35s ease}
+
+main{max-width:1040px;margin:0 auto;padding:28px 20px 64px}
+.narrow{max-width:760px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+.stack>*+*{margin-top:16px}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.xs{font-size:12.5px}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-600)}
+.eyebrow.teal{color:var(--teal)}
+.eyebrow.amber{color:var(--amber)}
+
+/* Buttons */
+.btn{appearance:none;font-family:inherit;font-size:15px;font-weight:600;border-radius:12px;padding:12px 18px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;line-height:1.2;text-decoration:none;transition:background .15s,border-color .15s,box-shadow .15s,transform .05s;min-height:46px}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:0 1px 2px rgba(79,70,229,.3),0 4px 12px rgba(79,70,229,.25)}
+.btn.primary:hover{background:var(--accent-600)}
+.btn.secondary{background:#fff;color:var(--ink);border-color:var(--line-2)}
+.btn.secondary:hover{border-color:var(--accent);color:var(--accent-700)}
+.btn.ghost{background:transparent;color:var(--muted)}
+.btn.ghost:hover{background:#f1f5f9;color:var(--ink)}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+
+/* Landing */
+.hero{text-align:center;max-width:760px;margin:8px auto 28px}
+.hero h1{font-size:clamp(30px,5vw,44px);font-weight:800;margin:14px 0 12px;letter-spacing:-.02em}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),#0d9488);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:640px;margin:0 auto}
+.assess-list{display:grid;gap:16px;max-width:760px;margin:0 auto}
+.assess{display:flex;gap:18px;align-items:flex-start;text-align:left;width:100%;font-family:inherit;color:inherit;cursor:pointer;background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:box-shadow .15s,border-color .15s,transform .15s}
+.assess:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-200);transform:translateY(-1px)}
+.assess.featured{border-color:var(--accent-200);background:linear-gradient(180deg,#fff, #fafaff)}
+.assess-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex-shrink:0;background:var(--accent-50);color:var(--accent)}
+.assess-icon.teal{background:var(--teal-50);color:var(--teal)}
+.assess-icon svg{width:26px;height:26px}
+.assess h2{font-size:19px;font-weight:700;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.assess h2 svg{width:20px;height:20px;color:var(--muted-2);flex-shrink:0}
+.assess .desc{color:var(--muted);margin-top:4px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:14px;color:var(--muted-2);align-items:center}
+.meta span{display:inline-flex;align-items:center;gap:6px}
+.meta svg{width:16px;height:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:12px;padding:3px 8px;border-radius:6px;background:var(--accent-50);color:var(--accent-700);font-weight:500}
+.tag.strong{background:var(--accent);color:#fff;font-weight:700;letter-spacing:.03em}
+.tag.teal{background:var(--teal-50);color:var(--teal)}
+.tag.teal.strong{background:var(--teal);color:#fff}
+.status{margin-top:12px;font-size:13.5px;padding:8px 12px;border-radius:10px;background:#f8fafc;border:1px dashed var(--line-2);color:var(--muted)}
+.status.ok{background:var(--good-50);border-color:#a7f3d0;color:var(--good)}
+.notice{display:flex;gap:12px;align-items:flex-start;background:var(--amber-50);border:1px solid #fde68a;color:#78350f;border-radius:14px;padding:14px 16px;font-size:15px}
+.notice svg{width:22px;height:22px;flex-shrink:0;margin-top:1px;color:var(--amber)}
+.notice.info{background:var(--accent-50);border-color:var(--accent-200);color:var(--accent-700)}
+.notice.info svg{color:var(--accent)}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:760px;margin:28px auto 0}
+.step4{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:14px;padding:14px}
+.step4 b{display:flex;align-items:center;gap:8px;font-size:14px}
+.step4 b i{font-style:normal;width:22px;height:22px;border-radius:999px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:12px}
+.step4 p{font-size:13px;color:var(--muted);margin-top:6px}
+.saved-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.foot{text-align:center;color:var(--muted-2);font-size:13px;margin-top:28px}
+
+/* Question screens */
+.q-head{margin-bottom:18px}
+.q-head h1{font-size:clamp(22px,3.4vw,28px);font-weight:800;margin-top:6px}
+.q-head p{color:var(--muted);margin-top:8px}
+.stepper{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13.5px;color:var(--muted-2);margin-bottom:10px}
+.q{border:1px solid var(--line);background:#fff;border-radius:var(--radius);padding:20px;margin:0 0 14px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
+.q.answered{border-color:var(--accent-200)}
+.q.missing{border-color:#fca5a5;box-shadow:0 0 0 3px #fee2e2}
+.q legend{padding:0;font-weight:600;font-size:16.5px;line-height:1.45;display:block;width:100%;float:left;margin-bottom:14px}
+.q legend+*{clear:both}
+.qnum{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:8px;background:var(--accent-50);color:var(--accent-700);font-size:13px;font-weight:700;margin-right:10px;vertical-align:1px;padding:0 6px}
+.tag-drain{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:700;color:var(--amber);background:var(--amber-50);border:1px solid #fde68a;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.tag-drain svg{width:12px;height:12px}
+.likert{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;z-index:1;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.opt span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;min-height:64px;padding:8px 4px;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;transition:all .12s;user-select:none}
+.opt span b{font-size:18px;font-weight:700;color:var(--ink-2)}
+.opt span small{font-size:11.5px;color:var(--muted-2);line-height:1.2}
+.opt:hover span{border-color:var(--accent);background:var(--accent-50)}
+.opt input:checked+span{background:var(--accent);border-color:var(--accent);box-shadow:0 2px 8px rgba(79,70,229,.3)}
+.opt input:checked+span b,.opt input:checked+span small{color:#fff}
+.opt input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.scale-ends{display:none;justify-content:space-between;font-size:12px;color:var(--muted-2);margin-top:6px}
+.choices{display:grid;gap:8px}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;z-index:1;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice span{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;transition:all .12s;font-size:15px}
+.choice span::before{content:"";width:18px;height:18px;border-radius:999px;border:2px solid var(--line-2);flex-shrink:0;background:#fff;transition:all .12s}
+.choice:hover span{border-color:var(--accent);background:var(--accent-50)}
+.choice input:checked+span{border-color:var(--accent);background:var(--accent-50);color:var(--accent-700);font-weight:600}
+.choice input:checked+span::before{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 3px #fff}
+.choice input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.role span{flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px 14px 44px;position:relative;min-height:72px;justify-content:center}
+.role span::before{position:absolute;left:14px;top:50%;margin-top:-9px}
+.role span b{font-size:15.5px}
+.role span small{font-size:13px;color:var(--muted-2);font-weight:400}
+.field{display:grid;gap:6px;margin-top:4px}
+.field label{font-weight:600;font-size:15px}
+.input{font-family:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;color:var(--ink);width:100%}
+.input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-100)}
+.nav{position:sticky;bottom:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(246,248,252,0),rgba(246,248,252,.96) 30%)}
+.nav .count{font-size:13.5px;color:var(--muted-2);text-align:center}
+.nav .err{color:var(--bad);font-weight:600}
+
+/* Results */
+.res-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.res-head h1{font-size:clamp(26px,4vw,34px);font-weight:800;margin-top:6px}
+.res-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.span-12{grid-column:span 12}.span-7{grid-column:span 7}.span-5{grid-column:span 5}.span-6{grid-column:span 6}
+.persona{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--accent-700),var(--accent) 55%,#0d9488);color:#fff;border:0}
+.persona .eyebrow{color:rgba(255,255,255,.8)}
+.persona h2{font-size:clamp(28px,4.5vw,38px);font-weight:800;margin:6px 0 8px}
+.persona p{color:rgba(255,255,255,.92);max-width:62ch}
+.persona-top{display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ladder{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}
+.ladder span{font-size:12.5px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.14);color:rgba(255,255,255,.85);font-weight:600}
+.ladder span.on{background:#fff;color:var(--accent-700)}
+.gauge{width:120px;height:120px;flex-shrink:0}
+.flu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px;margin-top:18px}
+.flu-item{font-size:13px}
+.flu-item .row{display:flex;justify-content:space-between;gap:6px;color:rgba(255,255,255,.9);margin-bottom:4px}
+.bar{height:6px;border-radius:999px;background:rgba(255,255,255,.22);overflow:hidden}
+.bar i{display:block;height:100%;background:#fff;border-radius:999px}
+.next-step{margin-top:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.guard{margin-top:10px;background:rgba(255,251,235,.95);color:#78350f;border-radius:12px;padding:12px 14px;font-size:14px}
+.card h3{font-size:18px;font-weight:700}
+.card-sub{color:var(--muted);font-size:14.5px;margin-top:4px}
+.radar-wrap{display:flex;justify-content:center;margin-top:8px}
+.radar-wrap svg{width:100%;max-width:520px;height:auto;overflow:visible}
+.legend{display:flex;gap:16px;justify-content:center;font-size:13px;color:var(--muted);margin-top:4px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:4px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.stage-list{display:grid;gap:12px;margin-top:14px}
+.stage-row .top{display:flex;justify-content:space-between;gap:8px;font-size:14.5px;margin-bottom:6px}
+.stage-row .top b{font-weight:600}
+.stage-row .bar{background:#eef2f7;height:8px}
+.stage-row .bar i{background:linear-gradient(90deg,var(--accent),#0d9488)}
+.stage-row.low .bar i{background:linear-gradient(90deg,#f59e0b,#d97706)}
+.score{font-variant-numeric:tabular-nums;font-weight:700}
+.delta{font-size:12.5px;font-weight:700;padding:1px 7px;border-radius:999px;margin-left:6px}
+.delta.up{background:var(--good-50);color:var(--good)}
+.delta.down{background:var(--bad-50);color:var(--bad)}
+.delta.flat{background:#f1f5f9;color:var(--muted)}
+.ins-col h3{display:flex;align-items:center;gap:10px}
+.ins-col h3 .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.ins-col h3 .ic svg{width:18px;height:18px}
+.ic.good{background:var(--teal-50);color:var(--teal)}
+.ic.amber{background:var(--amber-50);color:var(--amber)}
+.stage-block{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:14px;background:#fff}
+.stage-block h4{font-size:16px;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.stage-block .lead{font-size:13.5px;color:var(--muted);margin-top:4px}
+.uc{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
+.uc li{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:14.5px}
+.uc li svg{width:18px;height:18px;margin-top:2px;color:var(--accent)}
+.uc li b{display:block;font-weight:600}
+.uc li span{color:var(--muted)}
+.amplify .uc li svg{color:var(--teal)}
+details.prompt{margin-top:12px;border-radius:12px;background:#f8fafc;border:1px solid var(--line)}
+details.prompt summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:14px;color:var(--accent-700);list-style:none;display:flex;align-items:center;gap:8px}
+details.prompt summary::-webkit-details-marker{display:none}
+details.prompt summary::before{content:"▸";transition:transform .15s}
+details.prompt[open] summary::before{transform:rotate(90deg)}
+details.prompt pre{margin:0;padding:0 14px 12px;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:var(--ink-2);line-height:1.55}
+details.prompt .copy-prompt{margin:0 14px 12px}
+.breakout{border:2px solid var(--accent-200);background:linear-gradient(180deg,#fff,var(--accent-50))}
+.breakout-top{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.track-badge{width:64px;height:64px;border-radius:16px;background:var(--accent);color:#fff;display:grid;place-items:center;flex-shrink:0;box-shadow:0 6px 16px rgba(79,70,229,.3)}
+.track-badge svg{width:30px;height:30px}
+.breakout h2{font-size:clamp(22px,3.4vw,28px);font-weight:800;margin:4px 0 6px}
+.bring{display:flex;gap:10px;align-items:flex-start;margin-top:14px;background:#fff;border:1px dashed var(--accent-200);border-radius:12px;padding:12px 14px;font-size:14.5px}
+.bring svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;margin-top:1px}
+.alt{font-size:14px;color:var(--muted);margin-top:10px}
+.habits{display:grid;gap:8px;margin-top:14px}
+.habit span{align-items:flex-start}
+.habit span::before{margin-top:2px}
+.saved-msg{font-size:13.5px;color:var(--good);font-weight:600;min-height:20px;margin-top:8px}
+.habit-chosen{display:none}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.kpi .lbl{font-size:12.5px;color:var(--muted-2);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.kpi .val{font-size:22px;font-weight:800;margin-top:4px}
+.kpi .sub{font-size:13px;color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:2px}
+.pair .stage-block{margin-top:12px}
+.card.snap{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:0;padding:0;overflow:hidden}
+.snap>div{padding:16px 20px;border-right:1px solid var(--line)}
+.snap>div:last-child{border-right:0;background:var(--accent-50)}
+.snap .lbl{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-2);display:flex;align-items:center;gap:6px}
+.snap .lbl svg{width:14px;height:14px}
+.snap .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{font-size:13.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+.chip.good{background:var(--teal-50);color:var(--teal);border:1px solid var(--teal-100)}
+.chip.amber{background:var(--amber-50);color:var(--amber);border:1px solid #fde68a}
+.snap .track{font-weight:800;font-size:16px;color:var(--accent-700);margin-top:6px;line-height:1.3}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14.5px;opacity:0;pointer-events:none;transition:all .25s;z-index:50;box-shadow:var(--shadow-lg)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.print-only{display:none}
+
+/* Facilitator */
+.fac table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+.fac th,.fac td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.fac th{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted-2)}
+.fac pre{background:#0f172a;color:#e2e8f0;padding:14px;border-radius:12px;overflow:auto;font-size:12.5px;line-height:1.5}
+.fac code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+.fac ol,.fac ul{padding-left:20px;margin:8px 0 0}
+.fac li{margin:4px 0}
+.table-scroll{overflow-x:auto}
+
+@media (max-width:820px){
+  .span-7,.span-5,.span-6{grid-column:span 12}
+  .pair{grid-template-columns:1fr}
+  .card.snap{grid-template-columns:1fr}
+  .snap>div{border-right:0;border-bottom:1px solid var(--line);padding:14px 18px}
+  .snap>div:last-child{border-bottom:0}
+  .steps4{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  main{padding:18px 14px 56px}
+  .card{padding:18px}
+  .q{padding:16px}
+  .assess{padding:18px;gap:14px}
+  .assess-icon{width:44px;height:44px}
+  .roles{grid-template-columns:1fr}
+  .opt span{min-height:52px}
+  .opt span small{display:none}
+  .scale-ends{display:flex}
+  .flu-grid{grid-template-columns:repeat(2,1fr);gap:10px 14px}
+  .flu-item{font-size:12.5px}
+  .compare-grid{grid-template-columns:1fr}
+  .gauge{width:96px;height:96px}
+  .topbar-inner{padding:10px 14px}
+  .brand .t{display:none}
+  .nav .btn{padding:12px 14px}
+  .actions .btn{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+@media print{
+  @page{margin:12mm}
+  body{background:#fff;font-size:12px}
+  .topbar,.no-print,.nav,.toast,.skip{display:none!important}
+  .print-only{display:block}
+  main{padding:0;max-width:none}
+  .card,.stage-block,.kpi{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  .persona{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .res-grid{display:block}
+  .res-grid>*{margin-bottom:12px}
+  details.prompt{display:none}
+  .habits.has-choice .habit:not(.is-chosen){display:none}
+  .habit-chosen{display:block}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <button class="brand" type="button" data-act="home" aria-label="Back to start">
+      <span class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M19 15l.8 1.9 1.9.8-1.9.8L19 20.4l-.8-1.9-1.9-.8 1.9-.8z"/></svg></span>
+      <span class="t" id="brandTitle">GTM AI Self-Assessment</span>
+    </button>
+    <span class="pill" id="eventPill">SKO · AI Day</span>
+  </div>
+  <div class="progress-wrap" aria-hidden="true"><div class="progress" id="progress"></div></div>
+</header>
+<main id="app" tabindex="-1" aria-live="polite"></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><div style="max-width:640px;margin:40px auto;padding:20px;background:#fff;border-radius:12px">This assessment needs JavaScript enabled to run.</div></noscript>
+<script>
+(function () {
+'use strict';
+
+/* =====================================================================
+   CONFIG — edit these to brand the assessment for your event.
+   ===================================================================== */
+var CONFIG = {
+  eventLabel: 'SKO 2027 · AI Day',               // shown in the header pill + results
+  appTitle: 'GTM AI Self-Assessment',
+  subtitle: 'Day 3 of SKO is AI Day. Spend 10 minutes now to find your workflow superpowers, where AI can give you time back, and which hands-on breakout fits you best.',
+  breakoutName: 'AI Day breakout',               // what participants should bring results to
+  checkinDays: [30, 60],                         // retake cadence after SKO
+  storageKey: 'gtm-ai-assessment-v1',            // localStorage namespace (change per event to reset)
+  dataPolicyNote: 'Only paste customer or company data into AI tools your company has approved, and follow your data policy.',
+  // OPTIONAL: URL of a Google Apps Script web app (or any endpoint) that accepts a JSON POST.
+  // Leave empty to keep everything 100% local. When set, results show a "Send my results" button.
+  resultsEndpoint: ''
+};
+
+/* =====================================================================
+   CONTENT
+   ===================================================================== */
+var ROLES = [
+  { id: 'ae',  label: 'Account Executive',                   short: 'AE',               desc: 'New business, discovery & closing' },
+  { id: 'sdr', label: 'SDR / BDR',                           short: 'SDR/BDR',          desc: 'Prospecting & booking meetings' },
+  { id: 'cs',  label: 'Customer Success / Account Mgmt',     short: 'CS/AM',            desc: 'Adoption, renewals & expansion' },
+  { id: 'se',  label: 'Sales Engineer / Solutions',          short: 'SE/Solutions',     desc: 'Technical discovery, demos & RFPs' },
+  { id: 'mkt', label: 'Marketing',                           short: 'Marketing',        desc: 'Campaigns, content & demand' },
+  { id: 'mgr', label: 'Sales / GTM Manager or Leader',       short: 'Manager/Leader',   desc: 'Teams, forecasts & coaching' },
+  { id: 'ops', label: 'RevOps / Enablement',                 short: 'RevOps/Enablement',desc: 'Systems, data, process & training' }
+];
+
+var STAGES = [
+  { id: 'research',    label: 'Research & account intelligence',   short: 'Research' },
+  { id: 'prospecting', label: 'Prospecting & pipeline generation',  short: 'Prospecting' },
+  { id: 'discovery',   label: 'Discovery & meetings',               short: 'Meetings' },
+  { id: 'deal',        label: 'Deal strategy, proposals & content', short: 'Deal & content' },
+  { id: 'pipeline',    label: 'Pipeline, forecast & CRM hygiene',   short: 'Pipeline & CRM' },
+  { id: 'growth',      label: 'Customer insight & expansion',       short: 'Insight & growth' }
+];
+
+// Role-specific stage labels (fallback = STAGES label)
+var STAGE_LABELS = {
+  sdr: { growth: ['Insight & self-coaching', 'Self-coaching'] },
+  cs:  { prospecting: ['Proactive outreach & pipeline', 'Outreach'], discovery: ['Customer meetings & QBRs', 'Meetings & QBRs'], deal: ['Success plans, renewals & content', 'Plans & renewals'], pipeline: ['Renewal forecast & CRM hygiene', 'Forecast & CRM'], growth: ['Churn signals & expansion', 'Churn & expansion'] },
+  se:  { prospecting: ['Technical messaging & pipeline', 'Messaging'], deal: ['Solutions, RFPs & technical content', 'Solutions & RFPs'], growth: ['Field insight & expansion', 'Field insight'] },
+  mkt: { research: ['Market & audience research', 'Research'], prospecting: ['Campaigns & pipeline generation', 'Campaigns'], discovery: ['Meetings & collaboration', 'Meetings'], deal: ['Content & messaging', 'Content'], pipeline: ['Reporting & data hygiene', 'Reporting & data'], growth: ['Customer & market insight', 'Customer insight'] },
+  mgr: { research: ['Deal & market intelligence', 'Intelligence'], prospecting: ['Pipeline generation (team)', 'Pipeline gen'], discovery: ['1:1s, reviews & meetings', 'Meetings'], deal: ['Deal strategy & executive docs', 'Deal strategy'], pipeline: ['Forecast & CRM inspection', 'Forecast & CRM'], growth: ['Coaching & team performance', 'Coaching'] },
+  ops: { research: ['Data & territory intelligence', 'Data & territory'], prospecting: ['Targeting & plays', 'Targeting'], discovery: ['Stakeholder meetings & sessions', 'Meetings'], deal: ['Playbooks, docs & deal support', 'Docs & deal desk'], pipeline: ['Forecast, reporting & CRM hygiene', 'Reporting & CRM'], growth: ['Insight & enablement', 'Enablement'] }
+};
+
+/* Section A questions: per stage, 3 statements.
+   #1 and #2 are strength statements; #3 is a "time check" (time-drain) statement and is reverse-scored. */
+var QA = {
+  research: {
+    generic: [
+      'Before an important conversation, I can quickly build a clear picture of the account: business priorities, recent news and key people.',
+      'I know where to find the signals that matter (news, hiring, tech stack, product usage, intent) and how to connect them.',
+      'Researching accounts and people takes more of my week than it should.'
+    ],
+    ae: [
+      'Before a first meeting, I can build a sharp point of view on the account\u2019s priorities, initiatives and buying committee.',
+      'I can quickly connect account signals (news, earnings, hiring, tech stack) to a reason our solution matters now.',
+      null
+    ],
+    sdr: [
+      'I can find a relevant, specific reason to reach out to a prospect in just a few minutes.',
+      'I know which signals (job changes, funding, hiring, intent, tech stack) make an account worth prioritizing.',
+      'Researching accounts and contacts takes more of my day than it should.'
+    ],
+    cs: [
+      'Before a customer meeting, I can quickly get up to speed on their health, usage, open issues and recent news.',
+      'I clearly understand each key customer\u2019s business goals and how they measure success with us.',
+      'Pulling together account context from different systems takes too long.'
+    ],
+    se: [
+      'Before a technical meeting, I can quickly understand the customer\u2019s environment, stack and requirements.',
+      null,
+      'Researching a customer\u2019s technical landscape takes more of my week than it should.'
+    ],
+    mkt: [
+      'I can quickly build a clear picture of a target segment or account: priorities, pains and buying triggers.',
+      'I know where to find market, competitor and intent signals and how to connect them.',
+      'Market and audience research takes more of my week than it should.'
+    ],
+    mgr: [
+      'I can quickly get up to speed on any key deal or account my team is working.',
+      'I understand market and competitor trends well enough to guide my team\u2019s strategy.',
+      'Getting context on deals before reviews takes more time than it should.'
+    ],
+    ops: [
+      'I can quickly get a clear picture of an account, segment or territory from our data.',
+      'I know how to combine CRM, product and external signals to show where the opportunity is.',
+      'Pulling data together for analysis takes more of my week than it should.'
+    ]
+  },
+  prospecting: {
+    generic: [
+      'I can write outreach that feels personal and relevant to the specific buyer, not templated.',
+      'I consistently help generate enough new pipeline to hit our goals.',
+      'Writing and personalizing outreach is a time drain for me.'
+    ],
+    ae: [
+      'I can write outreach to an executive that\u2019s specific to their business and earns a reply.',
+      'I self-source enough pipeline that I\u2019m not dependent on SDRs or inbound.',
+      'Personalizing outreach and follow-ups takes more of my week than it should.'
+    ],
+    sdr: [
+      'My first lines feel personal and relevant; prospects can tell I didn\u2019t use a template.',
+      'I hit my meeting or pipeline targets consistently.',
+      'Writing and personalizing emails, social messages and call scripts is a time drain.'
+    ],
+    cs: [
+      'I proactively reach out to customers with relevant, personalized messages, not just when there\u2019s a problem.',
+      'I consistently generate expansion or renewal pipeline from my book of business.',
+      'Writing customer emails and outreach is a time drain for me.'
+    ],
+    se: [
+      'I can explain our technical value in a way that\u2019s tailored to each buyer\u2019s role.',
+      'I help create pipeline through technical content, events or account engagement.',
+      'Writing technical emails and follow-ups takes more time than it should.'
+    ],
+    mkt: [
+      'I can create messaging that feels personal and relevant to specific personas or accounts.',
+      'My campaigns consistently produce pipeline that sales values.',
+      'Producing campaign copy and variations is a time drain for me.'
+    ],
+    mgr: [
+      'I help my team craft messaging and outreach that actually gets responses.',
+      'My team consistently builds enough pipeline coverage to hit our number.',
+      'Building pipeline plans and reviewing outreach is a time drain for me.'
+    ],
+    ops: [
+      'I help the team target the right accounts with the right plays (territories, scoring, segments).',
+      'I can quickly spot where pipeline generation is falling short and why.',
+      'Building lists, plays and campaign support is a time drain.'
+    ]
+  },
+  discovery: {
+    generic: [
+      'I walk into meetings well prepared, with a clear agenda and hypotheses.',
+      'After a meeting, I send a clear recap and next steps within 24 hours.',
+      'Taking notes, writing recaps and logging meeting details eats into my time.'
+    ],
+    ae: [
+      'I go into every discovery call with a clear agenda, hypotheses and questions tailored to the buyer.',
+      'Within 24 hours of a meeting, the customer gets a crisp recap and agreed next steps.',
+      null
+    ],
+    sdr: [
+      'On a cold call or first meeting, I can quickly uncover pain and qualify the prospect.',
+      'When I hand a meeting to an AE, my notes give them everything they need.',
+      'Logging calls and writing hand-off notes eats into my selling time.'
+    ],
+    cs: [
+      'I walk into QBRs and check-ins well prepared, with a clear agenda and point of view.',
+      'After customer meetings, I send clear recaps with owners and next steps.',
+      null
+    ],
+    se: [
+      'I go into technical discovery and demos with a tailored agenda and use cases.',
+      'After technical sessions, open questions and next steps are captured and shared quickly.',
+      null
+    ],
+    mkt: [
+      'I go into stakeholder, sales and customer meetings well prepared with a clear agenda.',
+      'After meetings, decisions and next steps are captured and shared quickly.',
+      null
+    ],
+    mgr: [
+      'I prepare well for 1:1s, deal reviews and the customer meetings I join.',
+      'My meetings end with clear decisions, owners and follow-ups that actually get sent.',
+      'Preparing for and following up on meetings eats a big part of my week.'
+    ],
+    ops: [
+      'I prepare well for stakeholder meetings, enablement sessions and business reviews.',
+      null,
+      null
+    ]
+  },
+  deal: {
+    generic: [
+      'I can quickly turn what I\u2019ve learned into a compelling, tailored proposal, business case or presentation.',
+      'I have a clear, written strategy for each important opportunity: stakeholders, risks and next steps.',
+      'Creating decks, proposals and documents from scratch takes more time than it should.'
+    ],
+    ae: [
+      'I can quickly produce a tailored proposal or business case that speaks to the buyer\u2019s metrics.',
+      'For every major deal, I have a current written deal plan (e.g., MEDDICC qualification, mutual action plan).',
+      null
+    ],
+    sdr: [
+      'I can tailor our value proposition to a prospect\u2019s industry and role on the fly.',
+      'I handle common objections confidently with relevant proof points.',
+      'Finding the right case study, talking point or content for a prospect takes too long.'
+    ],
+    cs: [
+      'I can quickly build a compelling QBR deck, success plan or renewal/expansion proposal.',
+      'For key renewals and expansions, I have a written plan covering stakeholders, risks and value delivered.',
+      null
+    ],
+    se: [
+      'I can quickly produce tailored solution designs, demo scripts or technical proposals.',
+      'I can answer RFPs and security questionnaires efficiently and accurately.',
+      'Responding to RFPs, security questionnaires and technical documentation takes too long.'
+    ],
+    mkt: [
+      'I can quickly turn insights into compelling content: briefs, decks, one-pagers, case studies.',
+      'Sales teams find our content easy to tailor for specific deals.',
+      'Creating content from scratch takes more time than it should.'
+    ],
+    mgr: [
+      'I can help reps sharpen deal strategy: stakeholders, risks and the path to close.',
+      'I can quickly create clear documents: business cases, executive summaries, plans and updates.',
+      null
+    ],
+    ops: [
+      'I can quickly create clear documentation: process guides, playbooks, training content, business cases.',
+      'I give reps the content, pricing and deal-desk support they need to win.',
+      'Writing documentation and enablement material takes too long.'
+    ]
+  },
+  pipeline: {
+    generic: [
+      'My CRM records are accurate and up to date without last-minute scrambles.',
+      'I can explain my numbers (what\u2019s real, what\u2019s at risk, and why) with confidence.',
+      'CRM updates and admin work feel like a time drain.'
+    ],
+    ae: [
+      'My opportunities, stages, close dates and next steps in CRM are always current.',
+      'I can defend my forecast call: what will close, what\u2019s at risk, and why.',
+      'Updating CRM and preparing for pipeline/forecast reviews is a time drain.'
+    ],
+    sdr: [
+      'My CRM activity, contacts and lead statuses are accurate and up to date.',
+      'I know exactly where my pipeline stands against target at any point in the month.',
+      'CRM logging, list building and admin tasks feel like a time drain.'
+    ],
+    cs: [
+      'Account health, renewal dates and notes in CRM are accurate and up to date.',
+      'I can forecast my renewals and expansions with confidence and explain the risks.',
+      'CRM updates, health scores and admin reporting feel like a time drain.'
+    ],
+    se: [
+      'My technical notes, requirements and deal status in CRM are current.',
+      'I flag technical risks in deals early and clearly.',
+      null
+    ],
+    mkt: [
+      'Our campaign and lead data in CRM and marketing systems is clean and reliable.',
+      'I can explain marketing\u2019s contribution to pipeline with confidence.',
+      'Pulling reports and cleaning data feels like a time drain.'
+    ],
+    mgr: [
+      'I trust the CRM data my team enters and can spot gaps fast.',
+      'I can build and defend a forecast with clear commentary on risk and upside.',
+      'Forecast prep, roll-ups and reporting are a time drain for me.'
+    ],
+    ops: [
+      'I trust our CRM data and can spot hygiene issues quickly.',
+      'I can produce forecast and pipeline analysis with clear commentary on risks.',
+      'Building reports, dashboards and forecast roll-ups is a time drain.'
+    ]
+  },
+  growth: {
+    generic: [
+      'I spot signals that a customer is ready to expand, or at risk of leaving, early.',
+      'I regularly turn customer conversations into insights I share with product, marketing or my team.',
+      'Pulling together customer insights (from calls, emails, tickets, usage) is slow and manual for me.'
+    ],
+    ae: [
+      'I spot expansion or cross-sell opportunities in my existing accounts early.',
+      'I use what I hear from customers to sharpen my pitch and share insights with my team.',
+      'Reviewing past calls and emails to find insights is slow and manual for me.'
+    ],
+    sdr: [
+      'I regularly review what\u2019s working in my outreach (replies, objections, messaging) and adjust.',
+      'I share what I\u2019m hearing from prospects with my team, AEs or marketing.',
+      'Reviewing my calls and results to find what to improve is slow and manual.'
+    ],
+    cs: [
+      'I spot churn-risk signals early enough to act on them.',
+      'I spot expansion opportunities and turn customer feedback into insights for product and sales.',
+      'Synthesizing signals from calls, tickets and usage data is slow and manual for me.'
+    ],
+    se: [
+      'I turn what I hear in the field into clear, actionable product feedback.',
+      'I spot technical expansion opportunities in existing accounts.',
+      null
+    ],
+    mkt: [
+      'I regularly turn customer conversations, win/loss and feedback into messaging insights.',
+      'I spot customer segments that are ready for expansion or advocacy programs.',
+      'Synthesizing customer feedback from calls, surveys and reviews is slow and manual.'
+    ],
+    mgr: [
+      'I coach each rep regularly using specific evidence (call recordings, deal data), not just gut feel.',
+      'I can quickly identify each rep\u2019s skill gaps and the patterns behind wins and losses.',
+      'Reviewing calls and preparing coaching takes more time than I have.'
+    ],
+    ops: [
+      'I can identify the patterns behind wins, losses and rep performance.',
+      'I turn those insights into enablement, coaching or process changes that stick.',
+      'Analyzing calls, deals and performance data to find insights is slow and manual.'
+    ]
+  }
+};
+
+var LIKERT = ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree'];
+
+/* Section B — AI mindset & fluency */
+var QB = [
+  { id: 'f_use', dim: 'Usage', type: 'choice', text: 'How often do you use an AI assistant for work tasks today?',
+    options: ['Never, or almost never', 'I\u2019ve tried it once or twice', 'A few times a month', 'Weekly', 'Daily, often several times a day'] },
+  { id: 'f_prompt', dim: 'Prompting', type: 'likert', text: 'I can write a prompt (with context, role, format and examples) that gets a usable first draft on the first or second try.' },
+  { id: 'f_verify', dim: 'Verification', type: 'choice', text: 'When AI gives me facts, numbers or customer details, I usually\u2026',
+    options: ['Use it as is', 'Skim it and move on', 'Spot-check it when something looks off', 'Verify the key facts before using it', 'Always check against the source before anything reaches a customer or my manager'] },
+  { id: 'f_experiment', dim: 'Experimentation', type: 'likert', text: 'I enjoy trying AI on new kinds of tasks, even when the first attempt doesn\u2019t work.' },
+  { id: 'f_data', dim: 'Data awareness', type: 'likert', text: 'I know which customer and company data I\u2019m allowed to put into AI tools, and which I\u2019m not.' },
+  { id: 'f_workflow', dim: 'Repeatable workflows', type: 'choice', text: 'Have you built a repeatable AI workflow (saved prompt, template or custom assistant) that you reuse?',
+    options: ['No, and I\u2019m not sure where I\u2019d start', 'No, but I\u2019d like to', 'I have a few saved prompts I sometimes reuse', 'Yes, at least one I use every week', 'Yes, several, and I\u2019ve shared them with teammates'] }
+];
+
+var PERSONAS = [
+  { id: 'observer', name: 'Curious Observer', min: 0,
+    desc: 'You know AI is changing GTM work, but it isn\u2019t part of your routine yet. That\u2019s a great place to start: the biggest gains usually come from the first few habits.',
+    next: 'Pick one task you do every week and try your AI assistant on it three times this month. Keep what works.' },
+  { id: 'experimenter', name: 'Experimenter', min: 35,
+    desc: 'You\u2019ve tried AI on a few tasks and seen some wins, but it isn\u2019t consistent yet. Your next step is turning one-off experiments into a reliable routine.',
+    next: 'Save your best prompt as a template and reuse it every week on the same task.' },
+  { id: 'practitioner', name: 'Practitioner', min: 60,
+    desc: 'AI is a regular part of how you work. You prompt with intent and check outputs. Your next level is building repeatable workflows that save hours, not minutes.',
+    next: 'Turn your most-used prompt into a documented, step-by-step workflow and measure the time it saves.' },
+  { id: 'multiplier', name: 'Multiplier', min: 80,
+    desc: 'You don\u2019t just use AI, you build workflows and help others adopt them. You\u2019re a natural peer coach for AI Day.',
+    next: 'Share one workflow with your team during the breakout and help a teammate get their first win.' }
+];
+
+/* Tie-break order when stage scores are equal: typical biggest time sinks first, per role */
+var ROLE_FOCUS = {
+  ae:  ['pipeline', 'discovery', 'deal', 'research', 'prospecting', 'growth'],
+  sdr: ['prospecting', 'research', 'pipeline', 'discovery', 'deal', 'growth'],
+  cs:  ['growth', 'discovery', 'pipeline', 'deal', 'research', 'prospecting'],
+  se:  ['deal', 'discovery', 'research', 'pipeline', 'growth', 'prospecting'],
+  mkt: ['deal', 'prospecting', 'research', 'growth', 'pipeline', 'discovery'],
+  mgr: ['growth', 'pipeline', 'discovery', 'deal', 'research', 'prospecting'],
+  ops: ['pipeline', 'deal', 'research', 'growth', 'prospecting', 'discovery']
+};
+
+/* Breakout tracks — one per workflow stage */
+var TRACKS = {
+  research:    { name: 'Know Your Account in 10 Minutes', desc: 'Build an account brief, stakeholder map and \u201cwhy now\u201d angle for a real account with your AI assistant.' },
+  prospecting: { name: 'Outreach That Doesn\u2019t Sound Like AI', desc: 'Write personalized, on-brand outreach and sequences that sound like you, not a robot.' },
+  discovery:   { name: 'Never Take Notes Again', desc: 'Prep, run and follow up on meetings with AI: call-prep one-pagers, summaries and recap emails.' },
+  deal:        { name: 'Win the Deal on Paper', desc: 'Draft deal plans, mutual action plans, proposals and business cases from your real deal notes.' },
+  pipeline:    { name: 'CRM on Autopilot', desc: 'Turn messy notes into clean CRM updates and forecast commentary in minutes.' },
+  growth:      { name: 'Grow & Coach with AI', desc: 'Find expansion and churn signals, synthesize customer insight, and coach from call transcripts.' }
+};
+
+/* AI use cases per stage. Tool-agnostic. [title, how] */
+var UC = {
+  research: {
+    generic: [['Account research brief', 'Have your AI assistant turn a company\u2019s website, news and your notes into a one-page brief: priorities, changes, likely challenges. Verify the key facts.'],
+              ['Stakeholder map', 'Paste public bios and your notes; get each person\u2019s likely priorities and how to engage them.'],
+              ['\u201cWhy now\u201d signal digest', 'Summarize news, earnings commentary or job postings into 3 talking points.']],
+    ae:  [['Account research brief', 'A one-page brief before every first meeting: priorities, initiatives, buying committee, open questions.'],
+          ['Earnings / annual report summary', 'Ask for the 3 strategic initiatives your solution supports, with the quote that proves each.'],
+          ['Buying committee map', 'Map roles, likely priorities and who you haven\u2019t met yet.']],
+    sdr: [['Personalization hooks in 2 minutes', 'Ask for 3 relevant, specific hooks per prospect from their company news and role.'],
+          ['Account prioritization', 'Paste a list with signals and ask AI to rank it and explain why.'],
+          ['Persona pain cheat sheet', 'Top pains, metrics and language for each buyer persona you call.']],
+    cs:  [['Pre-meeting account snapshot', 'Combine usage notes, open tickets and recent emails into a one-page snapshot.'],
+          ['Customer goals recap', 'Summarize what success looks like for the customer, in their words, from past notes.'],
+          ['Exec-change & news alert summary', 'Turn customer news into what it means for your relationship and renewal.']],
+    se:  [['Technical environment brief', 'Summarize public tech-stack signals, job postings and notes into a likely architecture and integration picture.'],
+          ['Requirements extraction', 'Pull requirements, constraints and open questions out of long email threads or RFP documents.'],
+          ['Competitive technical comparison', 'Prepare a fair, sourced comparison for likely technical objections.']],
+    mkt: [['Segment / persona brief', 'Synthesize research, interviews and reviews into a persona brief with pains and triggers.'],
+          ['Competitor messaging teardown', 'Compare competitor positioning and find white space.'],
+          ['Market signal digest', 'Summarize industry news and analyst commentary into themes for campaigns.']],
+    mgr: [['Deal review prep brief', 'Summarize opportunity notes, emails and call recaps into a one-page deal brief before reviews.'],
+          ['Competitive landscape digest', 'Monthly summary of competitor moves and what it means for your team\u2019s talk tracks.'],
+          ['Territory / account prioritization', 'Ask AI to cluster accounts by signals and suggest where the team should focus.']],
+    ops: [['Territory & segment analysis summary', 'Turn an account export into a plain-English summary of where the opportunity is.'],
+          ['Data narrative', 'Ask AI to explain what a dataset shows, and what it doesn\u2019t, before you present it.'],
+          ['Formula & query helper', 'Get help writing spreadsheet formulas or report filters to answer a business question.']]
+  },
+  prospecting: {
+    generic: [['Personalized first lines', 'Draft openers tied to a real trigger; you edit every one in your own voice.'],
+              ['Sequence drafting', 'Draft a multi-touch sequence across email, phone and social from one value message.'],
+              ['Message variants for testing', 'Create 2\u20133 variants to test subject lines, hooks or calls to action.']],
+    ae:  [['Executive outreach drafts', 'Draft short emails tied to a specific initiative you found in your research.'],
+          ['Multi-threading email set', 'One tailored message per stakeholder, each speaking to their priorities.'],
+          ['Value-add follow-ups', 'Replace \u201cjust checking in\u201d with an insight, question or resource relevant to the deal.']],
+    sdr: [['Personalized first lines at scale', 'Draft first lines for your list, then review and edit each one so it sounds like you.'],
+          ['Full sequence draft', 'Email, call and social touches built around one strong reason to talk.'],
+          ['Cold-call role-play', 'Practice your opener and objection handling with your AI assistant playing the prospect.']],
+    cs:  [['Proactive value check-ins', 'Draft emails that share a relevant win, tip or benchmark from the customer\u2019s own usage.'],
+          ['Renewal kickoff emails', 'Draft a renewal kickoff that recaps value delivered and next steps.'],
+          ['Expansion outreach', 'Tie an expansion idea to a usage milestone or goal the customer shared.']],
+    se:  [['Tailored technical follow-ups', 'Turn demo notes into a follow-up that answers each stakeholder\u2019s questions.'],
+          ['Role-specific value explanations', 'Explain the same capability for a CIO, an architect and an end user.'],
+          ['Technical content outlines', 'Outline a blog post, webinar or workshop from your field experience.']],
+    mkt: [['Campaign copy by persona', 'Generate persona and industry variants from one core message, then edit for brand voice.'],
+          ['Account-based message tailoring', 'Adapt a campaign for named accounts using their public priorities.'],
+          ['Repurpose one asset into many', 'Turn a webinar or report into emails, social posts and sales snippets.']],
+    mgr: [['Team outreach review', 'Paste reps\u2019 outreach and get feedback against your team\u2019s messaging rubric.'],
+          ['Pipeline gap plan', 'Describe your coverage gap and ask for a prioritized plan of plays and activities.'],
+          ['Play / campaign drafting', 'Draft a team play with target list criteria, message and cadence.']],
+    ops: [['Play design', 'Draft target criteria, messaging and cadence for a new sales play.'],
+          ['Template refresh', 'Rewrite old outreach templates to be shorter, clearer and more specific.'],
+          ['Pipeline gap diagnosis', 'Ask AI to summarize where in the funnel conversion is dropping and why.']]
+  },
+  discovery: {
+    generic: [['Call-prep one-pager', 'Agenda, hypotheses, questions and attendee notes on one page before every meeting.'],
+              ['Meeting summary + follow-up email', 'Turn notes or a transcript into a recap, action items and a draft follow-up email.'],
+              ['Action-item extraction', 'Pull owners and dates out of meeting notes so nothing slips.']],
+    ae:  [['Call-prep one-pager', 'Hypotheses, discovery questions and stakeholder notes for the specific buyer.'],
+          ['Meeting summary + follow-up email draft', 'From your notes or transcript: recap, next steps and a customer-ready email in minutes.'],
+          ['Discovery question bank', 'Persona-specific questions that uncover pain, impact and decision process.']],
+    sdr: [['Cold-call prep sheet', 'Opener, two pain hypotheses and likely objections for each priority prospect.'],
+          ['AE hand-off note', 'Turn call notes into a clean hand-off: pain, context, stakeholders, next step.'],
+          ['Objection role-play', 'Practice the objections you hear most until your responses feel natural.']],
+    cs:  [['QBR / check-in prep brief', 'Usage highlights, open issues, goals progress and talking points on one page.'],
+          ['Meeting recap with owners & dates', 'Customer-ready recap from your notes or transcript.'],
+          ['Escalation summary', 'Turn a long thread into a clear internal summary: issue, impact, ask.']],
+    se:  [['Demo prep', 'Map the customer\u2019s stated needs to a tailored demo flow and talking points.'],
+          ['Technical recap & open-questions list', 'From notes or transcript: what was covered, what\u2019s open, who owns it.'],
+          ['Discovery checklist', 'A tailored technical discovery checklist for the customer\u2019s environment.']],
+    mkt: [['Meeting brief', 'Context, goals and decisions needed for stakeholder or agency meetings.'],
+          ['Decision & action recap', 'Turn notes into a crisp recap with owners and dates.'],
+          ['Customer interview synthesis', 'Summarize interview transcripts into themes and quotes.']],
+    mgr: [['1:1 prep', 'Summarize a rep\u2019s pipeline changes and recent call notes into 1:1 talking points.'],
+          ['Decisions & action items recap', 'Turn meeting notes into decisions, owners and dates; send the same day.'],
+          ['Executive briefing', 'One-page brief before customer meetings you join: history, risks, your role.']],
+    ops: [['Stakeholder meeting brief', 'Goals, open decisions and data points for business reviews.'],
+          ['Session recap', 'Turn enablement or project meeting notes into recaps and action items.'],
+          ['Requirements capture', 'Turn stakeholder requests into structured requirements.']]
+  },
+  deal: {
+    generic: [['First drafts of proposals and decks', 'Start from an AI first draft built from your notes, never a blank page.'],
+              ['Business case narrative', 'Turn customer-provided metrics into a clear value story. Check every number.'],
+              ['Skeptical-buyer review', 'Ask AI to play the economic buyer and poke holes before the customer does.']],
+    ae:  [['MEDDICC / qualification gap analysis', 'Paste your deal notes and ask which qualification elements are missing or weak.'],
+          ['Mutual action plan draft', 'Draft a MAP with milestones, owners and dates working back from the customer\u2019s go-live.'],
+          ['Tailored proposal / business case', 'A first draft built around the buyer\u2019s own metrics and words.']],
+    sdr: [['Value prop cheat sheet', 'One-liners by industry and persona you can use on calls.'],
+          ['Objection responses with proof points', 'Draft responses to your top objections, linked to approved proof points.'],
+          ['Find the right case study fast', 'Describe the prospect and ask which approved story fits best and why.']],
+    cs:  [['QBR deck draft', 'Turn usage data and notes into a QBR storyline: value delivered, risks, next goals.'],
+          ['Success plan draft', 'Goals, milestones, owners and success metrics agreed with the customer.'],
+          ['Renewal / expansion business case', 'Summarize value delivered and the case for expanding.']],
+    se:  [['RFP & security questionnaire first drafts', 'Draft answers from your approved knowledge sources, then review every one.'],
+          ['Solution design write-up', 'Turn whiteboard notes into a clear solution document.'],
+          ['Persona demo script', 'A demo script tailored to the buyer\u2019s use cases and language.']],
+    mkt: [['Content brief to first draft', 'From brief to outline to first draft, in your brand voice guidelines.'],
+          ['Case study draft', 'Turn a customer interview transcript into a case study draft for approval.'],
+          ['Sales one-pagers by segment', 'Adapt core messaging into segment-specific one-pagers.']],
+    mgr: [['Deal strategy pressure test', 'Have AI play a skeptical CFO or procurement lead against a rep\u2019s deal plan.'],
+          ['Executive summary drafts', 'Turn deal or team updates into crisp executive summaries.'],
+          ['Win/loss pattern summary', 'Summarize recent win/loss notes into patterns and actions.']],
+    ops: [['Playbook & process doc drafts', 'Turn a process description into a clear, formatted playbook.'],
+          ['Training content & quizzes', 'Generate enablement modules, scenarios and knowledge checks.'],
+          ['Deal desk summaries', 'Summarize non-standard requests into a clear approval brief.']]
+  },
+  pipeline: {
+    generic: [['CRM note cleanup', 'Paste messy notes and get structured CRM-ready updates: next step, date, risks.'],
+              ['Forecast commentary draft', 'Draft a short commentary on what\u2019s committed, at risk and why.'],
+              ['Weekly pipeline self-review', 'Ask AI to flag stale records and missing next steps from an export.']],
+    ae:  [['Notes to structured CRM update', 'Raw notes in; next step, close-date rationale, stakeholders and risks out.'],
+          ['Forecast commentary draft', 'What\u2019s committed, what\u2019s at risk and why, in your manager\u2019s format.'],
+          ['Pipeline self-review', 'Ask AI to flag stale deals, slipped dates and missing next steps from your export.']],
+    sdr: [['Call notes to clean CRM activity', 'Turn quick call notes into consistent, complete activity logs.'],
+          ['Weekly pipeline recap', 'A short summary of meetings booked, progress and next week\u2019s focus.'],
+          ['List cleanup', 'Ask AI to spot duplicates, gaps and formatting issues in a list before upload.']],
+    cs:  [['Notes to account health summary', 'Turn notes, tickets and usage into a consistent health summary.'],
+          ['Renewal forecast commentary', 'Commit, risk and upside with clear reasons for each renewal.'],
+          ['Weekly book-of-business digest', 'Summarize what changed across your accounts this week.']],
+    se:  [['Technical notes to CRM fields', 'Turn session notes into structured requirements and risk fields.'],
+          ['Technical risk summary', 'Flag deals with unresolved technical blockers.'],
+          ['Weekly SE activity recap', 'Summarize where your time went and what\u2019s next.']],
+    mkt: [['Campaign performance narrative', 'Turn a report into a plain-English story: what worked, what didn\u2019t, next steps.'],
+          ['Data cleanup rules', 'Get help writing formulas or rules to standardize lead data.'],
+          ['Pipeline contribution summary', 'Draft a clear explanation of marketing-sourced and influenced pipeline.']],
+    mgr: [['Forecast roll-up commentary', 'Turn rep updates into a team forecast narrative with risks and upside.'],
+          ['Pipeline inspection', 'Ask AI to flag risk patterns (slipping dates, single-threaded deals) from an export.'],
+          ['Weekly team update draft', 'A concise update for your leadership from your notes.']],
+    ops: [['Data hygiene checks', 'Ask AI to summarize anomalies and gaps from a CRM export.'],
+          ['Forecast narrative', 'Draft the story behind the numbers for leadership.'],
+          ['Report & formula help', 'Explain or build report logic, formulas and filters faster.']]
+  },
+  growth: {
+    generic: [['Customer insight synthesis', 'Turn call notes, tickets and emails into themes, quotes and actions.'],
+              ['Expansion & risk signal scan', 'Ask AI to scan account notes for signs of growth or churn risk.'],
+              ['Voice-of-customer digest', 'A monthly summary of what customers are saying, for product and marketing.']],
+    ae:  [['Expansion opportunity scan', 'Scan account notes for unmet needs, new teams or initiatives that signal expansion.'],
+          ['Call themes digest', 'Summarize themes across your recent calls to sharpen your pitch.'],
+          ['Account plan draft', 'Draft an account plan with whitespace, stakeholders and next moves.']],
+    sdr: [['Self-coaching from call transcripts', 'Ask for 2 strengths and 2 improvements from a recorded call, with quotes.'],
+          ['Reply analysis', 'Paste replies and objections; find patterns in what\u2019s working.'],
+          ['Insight share-out', 'Summarize what prospects are saying this week for your AEs and marketing.']],
+    cs:  [['Churn-signal summary', 'Scan notes, tickets and usage comments for risk signals, with evidence.'],
+          ['Expansion opportunity scan', 'Find goals, new teams or use cases that point to expansion.'],
+          ['Voice-of-customer digest for product', 'Themes, quotes and impact, ready to share with product.']],
+    se:  [['Field feedback digest', 'Turn scattered technical feedback into a clear, prioritized summary for product.'],
+          ['Technical expansion scan', 'Find integration or use-case gaps in existing accounts.'],
+          ['Reusable answer library', 'Turn your best answers into reusable, reviewed snippets for the team.']],
+    mkt: [['Voice-of-customer synthesis', 'Themes and quotes from calls, surveys and reviews for messaging.'],
+          ['Win/loss theme extraction', 'Summarize win/loss notes into messaging and positioning insights.'],
+          ['Advocacy candidate shortlist', 'Find happy customers in notes and feedback for case studies or references.']],
+    mgr: [['Coaching from call transcripts', 'Rubric-based feedback on a rep\u2019s call with quotes and better phrasing, then you coach live.'],
+          ['Rep development plans', 'Turn observations into a focused 30-day development plan per rep.'],
+          ['Win/loss pattern analysis', 'Find the behaviors behind your team\u2019s wins and losses.']],
+    ops: [['Win/loss & performance patterns', 'Summarize what separates top performers from the rest, from deal and call data.'],
+          ['Enablement from top-performer calls', 'Turn great calls into talk tracks and training scenarios.'],
+          ['Coaching rubric builder', 'Draft a consistent call-coaching rubric managers can use with AI.']]
+  }
+};
+
+/* Starter prompts (shown for "time back" stages). {role} is replaced. */
+var PROMPTS = {
+  research: 'I\u2019m a {role} preparing for a meeting with [Company]. Using only the information I paste below (website, news, my notes), give me:\n1) their top 3 business priorities\n2) recent changes or news that matter\n3) likely challenges for a [buyer title]\n4) 3 smart questions I should ask\nFlag anything you\u2019re unsure about.\n\n[paste information]',
+  prospecting: 'Write a 90-word email to [Name], [Title] at [Company].\nTrigger: [the specific news or insight]\nWhy we\u2019re relevant: [one line]\nTone: direct, human, no buzzwords, no \u201cI hope this finds you well\u201d.\nGive me 3 different opening lines to choose from and one clear, low-friction ask.',
+  discovery: 'Here are my raw notes / transcript from a call with [Company]. Produce:\n1) a 5-bullet summary\n2) decisions made and open questions\n3) action items with owners and dates\n4) a follow-up email to the customer under 150 words\nDon\u2019t invent anything that isn\u2019t in the notes.\n\n[paste notes]',
+  deal: 'Act as a skeptical [CFO / economic buyer] at [Company]. Here is my deal summary and draft proposal:\n[paste]\nWhat are the 5 toughest questions you would ask? What is missing from the business case? Which risks would stop you from signing? Then suggest how I should strengthen the proposal.',
+  pipeline: 'Turn these raw notes into a CRM update with these fields:\n- Next step (with date)\n- Stage rationale\n- Key stakeholders and their stance\n- Risks\n- Forecast category recommendation, with a one-line reason\nKeep it factual and concise. Don\u2019t add anything that isn\u2019t in the notes.\n\n[paste notes]',
+  growth: 'Here are recent notes from calls, emails and tickets for [Account]:\n[paste]\nIdentify:\n1) signs of expansion potential\n2) signs of churn risk\n3) the top themes in their feedback\n4) one recommended next action\nQuote the source line for each point.',
+  growth_mgr: 'Here is a call transcript from one of my reps:\n[paste]\nUsing this rubric: discovery depth, quantifying impact, next steps, objection handling, talk-listen balance, give:\n- 2 things they did well\n- 2 specific coaching points\nInclude a quote from the transcript for each and a suggested better phrasing.'
+};
+
+/* 30-day habits per weakest stage */
+var HABITS = {
+  research: ['Before every first meeting, generate a one-page AI account brief (10 minutes max) and verify the key facts.',
+             'Every Monday, ask AI for a \u201cwhy now\u201d digest on my top 5 accounts.',
+             'Build and save a reusable research prompt, then share it with one teammate.'],
+  prospecting: ['Draft first lines with AI for 5 prospects a day, and edit every one into my own voice.',
+                'For each new sequence or campaign, test 2 AI-drafted variants and keep the winner.',
+                'Save my best-performing outreach prompt as a template and reuse it weekly.'],
+  discovery: ['Create an AI call-prep one-pager before every external meeting.',
+              'Send an AI-drafted, human-edited recap within 2 hours of every meeting.',
+              'End each day by having AI turn my notes into action items with owners and dates.'],
+  deal: ['For my top opportunity, have AI draft or refresh the mutual action plan / deal plan every week.',
+         'Run every proposal through AI as a \u201cskeptical buyer\u201d before it goes out.',
+         'Start every new deck or document from an AI first draft, never a blank page.'],
+  pipeline: ['Paste my raw notes into AI and update CRM right after every meeting.',
+             'Every Friday, have AI draft my forecast / pipeline commentary from my notes.',
+             'Do a weekly 15-minute AI-assisted pipeline scrub to flag stale records and missing next steps.'],
+  growth: ['Each week, have AI summarize one customer conversation into insights and signals.',
+           'Once a month, ask AI to scan my account notes for expansion and churn signals.',
+           'Share one AI-synthesized customer insight with my team every week.'],
+  growth_mgr: ['Review one rep call per week with an AI-generated coaching summary, then coach live.',
+               'Prep every 1:1 with an AI summary of the rep\u2019s pipeline changes and recent calls.',
+               'Build a coaching-rubric prompt and share it with my peer managers.']
+};
+
+/* =====================================================================
+   ICONS
+   ===================================================================== */
+function svg(p, extra) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"' + (extra || '') + '>' + p + '</svg>'; }
+var I = {
+  target: svg('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>'),
+  refresh: svg('<path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/>'),
+  chevron: svg('<path d="m9 18 6-6-6-6"/>'),
+  clock: svg('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
+  list: svg('<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'),
+  camera: svg('<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/>'),
+  lock: svg('<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'),
+  bolt: svg('<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>'),
+  star: svg('<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>'),
+  hourglass: svg('<path d="M5 22h14M5 2h14M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2"/>'),
+  check: svg('<path d="M20 6 9 17l-5-5"/>'),
+  sparkle: svg('<path d="M12 3l1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/>'),
+  users: svg('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>'),
+  briefcase: svg('<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>'),
+  printer: svg('<path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>'),
+  copy: svg('<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>'),
+  home: svg('<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>'),
+  send: svg('<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>'),
+  download: svg('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>'),
+  arrowL: svg('<path d="m15 18-6-6 6-6"/>'),
+  arrowR: svg('<path d="m9 18 6-6-6-6"/>'),
+  trend: svg('<path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/>'),
+  shield: svg('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>')
+};
+var TRACK_ICON = { research: I.target, prospecting: I.send, discovery: I.list, deal: I.briefcase, pipeline: I.refresh, growth: I.trend };
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function roleById(id) { for (var i = 0; i < ROLES.length; i++) if (ROLES[i].id === id) return ROLES[i]; return null; }
+function stageById(id) { for (var i = 0; i < STAGES.length; i++) if (STAGES[i].id === id) return STAGES[i]; return null; }
+function stageLabel(id, role) { var o = STAGE_LABELS[role] && STAGE_LABELS[role][id]; return o ? o[0] : stageById(id).label; }
+function stageShort(id, role) { var o = STAGE_LABELS[role] && STAGE_LABELS[role][id]; return o ? o[1] : stageById(id).short; }
+function aQuestions(stage, role) {
+  var g = QA[stage].generic, r = QA[stage][role] || [];
+  return [0, 1, 2].map(function (i) { return { id: stage + '_' + (i + 1), text: r[i] || g[i], drain: i === 2, type: 'likert' }; });
+}
+function useCases(stage, role) { return (UC[stage][role] || UC[stage].generic); }
+function habitsFor(stage, role) { return (stage === 'growth' && role === 'mgr') ? HABITS.growth_mgr : HABITS[stage]; }
+function promptFor(stage, role) {
+  var p = (stage === 'growth' && role === 'mgr') ? PROMPTS.growth_mgr : PROMPTS[stage];
+  var r = roleById(role); return p.replace('{role}', r ? r.label : 'GTM professional');
+}
+function toIndex(avg) { return Math.round((avg - 1) / 4 * 100); }
+function personaFor(score) { var p = PERSONAS[0]; PERSONAS.forEach(function (x) { if (score >= x.min) p = x; }); return p; }
+function fmtDate(iso) { try { return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); } catch (e) { return iso; } }
+function modeLabel(m) { return m === 'checkin' ? 'Check-in' : 'Baseline'; }
+function totalQuestions() { return STAGES.length * 3 + QB.length; }
+function daysLabel() { return CONFIG.checkinDays.join(' & ') + ' days'; }
+
+var store = {
+  k: function (k) { return CONFIG.storageKey + ':' + k; },
+  get: function (k) { try { return JSON.parse(localStorage.getItem(this.k(k))); } catch (e) { return null; } },
+  set: function (k, v) { try { localStorage.setItem(this.k(k), JSON.stringify(v)); } catch (e) { } },
+  del: function (k) { try { localStorage.removeItem(this.k(k)); } catch (e) { } }
+};
+
+var $app = document.getElementById('app');
+var $progress = document.getElementById('progress');
+var params = new URLSearchParams(location.search);
+
+var STEPS = ['role'].concat(STAGES.map(function (s) { return 'A:' + s.id; }), ['B:0', 'B:1']);
+
+var state = { screen: 'landing', mode: 'baseline', role: null, name: '', answers: {}, step: 0, result: null };
+
+function saveDraft() { store.set('draft', { mode: state.mode, role: state.role, name: state.name, answers: state.answers, step: state.step }); }
+
+function toast(msg) {
+  var t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(function () { t.classList.remove('show'); }, 2200);
+}
+
+function setProgress(p) { $progress.style.width = Math.max(0, Math.min(100, p)) + '%'; }
+
+function go(screen, opts) {
+  state.screen = screen;
+  render();
+  window.scrollTo(0, 0);
+  var h = $app.querySelector('h1');
+  if (h && !(opts && opts.noFocus)) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+}
+
+/* =====================================================================
+   RENDER: LANDING
+   ===================================================================== */
+function renderLanding() {
+  setProgress(0);
+  var base = store.get('baseline'), chk = store.get('checkin'), draft = store.get('draft');
+  var n = totalQuestions();
+  var baseStatus = base ? '<div class="status ok">' + I.check.replace('<svg', '<svg style="width:14px;height:14px;vertical-align:-2px"') + ' Completed ' + esc(fmtDate(base.date)) + ' \u00b7 ' + esc(base.persona) + ' \u00b7 recommended: \u201c' + esc(TRACKS[base.bottom[0]].name) + '\u201d</div>' : '';
+  var chkStatus = base ? '<div class="status ok">Your baseline from ' + esc(fmtDate(base.date)) + ' is saved on this device. Your check-in will be compared against it.</div>'
+                       : '<div class="status">No baseline found on this device. You can still take the check-in; it will be saved for future comparisons.</div>';
+  var draftNote = (draft && draft.answers && Object.keys(draft.answers).length && draft.step > 0)
+    ? '<div class="notice info no-print" style="max-width:760px;margin:0 auto 16px">' + I.clock + '<div><b>You have an unfinished ' + esc(modeLabel(draft.mode).toLowerCase()) + '.</b> <button class="btn secondary" style="min-height:36px;padding:6px 12px;margin-left:6px" data-act="resume">Resume where I left off</button></div></div>' : '';
+
+  $app.innerHTML =
+    '<section class="hero">' +
+      '<span class="pill">' + esc(CONFIG.eventLabel) + '</span>' +
+      '<h1>' + esc(CONFIG.appTitle).replace('AI', '<span>AI</span>') + '</h1>' +
+      '<p>' + esc(CONFIG.subtitle) + '</p>' +
+    '</section>' +
+    draftNote +
+    '<div class="assess-list">' +
+      '<button class="assess featured" data-act="start" data-mode="baseline">' +
+        '<span class="assess-icon">' + I.target + '</span>' +
+        '<span style="flex:1;min-width:0;display:block">' +
+          '<h2>Baseline: Where are you today?' + I.chevron + '</h2>' +
+          '<p class="desc">Take this before SKO. Find your workflow superpowers, where AI can give you time back, and your recommended breakout.</p>' +
+          '<span class="meta"><span>' + I.clock + ' About 10 minutes</span><span>' + I.list + ' ' + n + ' questions</span></span>' +
+          '<span class="tags"><span class="tag strong">TAKE THIS FIRST</span><span class="tag">Research</span><span class="tag">Prospecting</span><span class="tag">Meetings</span><span class="tag">Deals & content</span><span class="tag">Pipeline & CRM</span><span class="tag">Insight & coaching</span><span class="tag">AI fluency</span></span>' +
+          baseStatus +
+        '</span>' +
+      '</button>' +
+      '<button class="assess" data-act="start" data-mode="checkin">' +
+        '<span class="assess-icon teal">' + I.refresh + '</span>' +
+        '<span style="flex:1;min-width:0;display:block">' +
+          '<h2>30-Day Check-in' + I.chevron + '</h2>' +
+          '<p class="desc">Retake after SKO (at ' + esc(daysLabel()) + ') to see how your AI habits are changing your work. Same questions, compared with your baseline.</p>' +
+          '<span class="meta"><span>' + I.clock + ' About 10 minutes</span><span>' + I.list + ' ' + n + ' questions</span></span>' +
+          '<span class="tags"><span class="tag teal strong">AFTER SKO</span><span class="tag teal">Before / after comparison</span><span class="tag teal">Habit check</span></span>' +
+          chkStatus +
+        '</span>' +
+      '</button>' +
+      '<div class="notice">' + I.camera + '<div><b>Important:</b> Take a screenshot of your results after each assessment and bring it to your ' + esc(CONFIG.breakoutName) + '.</div></div>' +
+    '</div>' +
+    ((base || chk) ? '<div class="saved-links">' +
+        (base ? '<button class="btn secondary" data-act="view" data-mode="baseline">View my baseline results</button>' : '') +
+        (chk ? '<button class="btn secondary" data-act="view" data-mode="checkin">View my latest check-in</button>' : '') +
+      '</div>' : '') +
+    '<div class="steps4" aria-label="How AI Day works">' +
+      '<div class="step4"><b><i>1</i>Diagnose</b><p>Take the baseline before SKO to find your strengths and friction points.</p></div>' +
+      '<div class="step4"><b><i>2</i>Apply</b><p>Join a hands-on breakout on your weakest workflow, using a real account or deal.</p></div>' +
+      '<div class="step4"><b><i>3</i>Commit</b><p>Pick one 30-day AI habit that gives you time back.</p></div>' +
+      '<div class="step4"><b><i>4</i>Measure</b><p>Retake at ' + esc(daysLabel()) + ' to see what changed.</p></div>' +
+    '</div>' +
+    '<p class="foot">' + I.lock.replace('<svg', '<svg style="width:14px;height:14px;vertical-align:-2px"') + ' ' +
+      (CONFIG.resultsEndpoint ? 'Your answers are stored in this browser. They are only sent if you choose \u201cSend my results\u201d.' : 'Your answers stay in this browser. Nothing is sent anywhere.') +
+    '</p>';
+}
+
+/* =====================================================================
+   RENDER: QUESTIONS
+   ===================================================================== */
+function questionsForStep(step) {
+  var key = STEPS[step];
+  if (key.indexOf('A:') === 0) return aQuestions(key.slice(2), state.role);
+  if (key === 'B:0') return QB.slice(0, 3);
+  if (key === 'B:1') return QB.slice(3);
+  return [];
+}
+function questionNumberOffset(step) {
+  var n = 0; for (var s = 1; s < step; s++) n += questionsForStep(s).length; return n;
+}
+function answeredCount() {
+  var n = 0; for (var s = 1; s < STEPS.length; s++) questionsForStep(s).forEach(function (q) { if (state.answers[q.id]) n++; }); return n;
+}
+
+function likertHTML(q, num) {
+  var v = state.answers[q.id];
+  var opts = LIKERT.map(function (lbl, i) {
+    var val = i + 1;
+    return '<label class="opt"><input type="radio" name="' + q.id + '" value="' + val + '"' + (v === val ? ' checked' : '') + ' aria-label="' + val + ' \u2013 ' + lbl + '"><span><b>' + val + '</b><small>' + lbl + '</small></span></label>';
+  }).join('');
+  return '<fieldset class="q' + (v ? ' answered' : '') + '" data-qid="' + q.id + '">' +
+    '<legend><span class="qnum">' + num + '</span>' + esc(q.text) + (q.drain ? ' <span class="tag-drain" title="This one is about time spent: agree if it drains your time">' + I.hourglass + 'Time check</span>' : '') + '</legend>' +
+    '<div class="likert">' + opts + '</div>' +
+    '<div class="scale-ends" aria-hidden="true"><span>1 = Strongly disagree</span><span>5 = Strongly agree</span></div>' +
+  '</fieldset>';
+}
+function choiceHTML(q, num) {
+  var v = state.answers[q.id];
+  var opts = q.options.map(function (lbl, i) {
+    var val = i + 1;
+    return '<label class="choice"><input type="radio" name="' + q.id + '" value="' + val + '"' + (v === val ? ' checked' : '') + '><span>' + esc(lbl) + '</span></label>';
+  }).join('');
+  return '<fieldset class="q' + (v ? ' answered' : '') + '" data-qid="' + q.id + '">' +
+    '<legend><span class="qnum">' + num + '</span>' + esc(q.text) + '</legend>' +
+    '<div class="choices">' + opts + '</div></fieldset>';
+}
+
+function navHTML(isLast) {
+  var c = answeredCount(), n = totalQuestions();
+  return '<div class="nav">' +
+    '<button class="btn ghost" data-act="back">' + I.arrowL + 'Back</button>' +
+    '<span class="count" id="navCount">' + c + ' of ' + n + ' answered</span>' +
+    '<button class="btn primary" data-act="next">' + (isLast ? 'See my results' : 'Next') + I.arrowR + '</button>' +
+  '</div>';
+}
+
+function renderRole() {
+  var roles = ROLES.map(function (r) {
+    return '<label class="choice role"><input type="radio" name="role" value="' + r.id + '"' + (state.role === r.id ? ' checked' : '') + '><span><b>' + esc(r.label) + '</b><small>' + esc(r.desc) + '</small></span></label>';
+  }).join('');
+  return '<div class="stepper"><span>Step 1 of ' + STEPS.length + '</span><span class="pill ' + (state.mode === 'checkin' ? 'teal' : '') + '">' + modeLabel(state.mode) + '</span></div>' +
+    '<div class="q-head"><span class="eyebrow">Getting started</span><h1>What\u2019s your role?</h1><p>We\u2019ll tailor the questions and AI recommendations to the work you actually do. Pick the closest fit.</p></div>' +
+    '<fieldset class="q" data-qid="role" style="padding:16px"><legend class="sr-only">Your role</legend><div class="roles">' + roles + '</div></fieldset>' +
+    '<div class="card" style="padding:18px"><div class="field"><label for="nameInput">Your first name <span class="muted" style="font-weight:400">(optional, stored only on this device)</span></label>' +
+    '<input id="nameInput" class="input" type="text" autocomplete="given-name" maxlength="40" value="' + esc(state.name) + '" placeholder="e.g. Alex"></div></div>' +
+    (state.mode === 'checkin' && store.get('baseline') ? '<p class="small muted" style="margin-top:12px">Tip: choose the same role as your baseline (' + esc(roleById(store.get('baseline').role).label) + ') for a clean comparison.</p>' : '');
+}
+
+function renderStep() {
+  var key = STEPS[state.step];
+  var isLast = state.step === STEPS.length - 1;
+  setProgress(state.step / STEPS.length * 100);
+  var html;
+  if (key === 'role') {
+    html = renderRole();
+  } else {
+    var qs = questionsForStep(state.step);
+    var off = questionNumberOffset(state.step);
+    var head;
+    if (key.indexOf('A:') === 0) {
+      var sid = key.slice(2), idx = STAGES.findIndex(function (s) { return s.id === sid; });
+      head = '<div class="q-head"><span class="eyebrow">Section A \u00b7 Workflow strengths & friction \u00b7 ' + (idx + 1) + ' of ' + STAGES.length + '</span>' +
+        '<h1>' + esc(stageLabel(sid, state.role)) + '</h1>' +
+        (idx === 0 ? '<p>Rate how true each statement is for you <b>today</b>. Be honest: this is for you, not a performance review. Statements marked <span class="tag-drain" style="margin:0">' + I.hourglass + 'Time check</span> ask whether something drains your time.</p>' : '<p>How true is each statement for you today?</p>') +
+        '</div>';
+    } else {
+      var part = key === 'B:0' ? 1 : 2;
+      head = '<div class="q-head"><span class="eyebrow">Section B \u00b7 AI mindset & fluency \u00b7 ' + part + ' of 2</span>' +
+        '<h1>' + (part === 1 ? 'How you use AI today' : 'How you work with AI') + '</h1>' +
+        '<p>' + (part === 1 ? 'There are no wrong answers. This sets your starting point, not a grade.' : 'Last page. Three more questions and you\u2019ll see your results.') + '</p></div>';
+    }
+    html = '<div class="stepper"><span>Step ' + (state.step + 1) + ' of ' + STEPS.length + '</span><span class="pill ' + (state.mode === 'checkin' ? 'teal' : '') + '">' + modeLabel(state.mode) + ' \u00b7 ' + esc(roleById(state.role).short) + '</span></div>' + head +
+      qs.map(function (q, i) { return q.type === 'choice' ? choiceHTML(q, off + i + 1) : likertHTML(q, off + i + 1); }).join('');
+  }
+  $app.innerHTML = '<div class="narrow">' + html + navHTML(isLast) + '</div>';
+}
+
+function stepComplete() {
+  if (STEPS[state.step] === 'role') return !!state.role;
+  return questionsForStep(state.step).every(function (q) { return !!state.answers[q.id]; });
+}
+
+function next() {
+  if (!stepComplete()) {
+    var first = null;
+    if (STEPS[state.step] === 'role') { first = $app.querySelector('[data-qid="role"]'); first.classList.add('missing'); }
+    else questionsForStep(state.step).forEach(function (q) {
+      if (!state.answers[q.id]) { var el = $app.querySelector('[data-qid="' + q.id + '"]'); el.classList.add('missing'); if (!first) first = el; }
+    });
+    var c = document.getElementById('navCount');
+    if (c) { c.innerHTML = '<span class="err">' + (STEPS[state.step] === 'role' ? 'Please choose a role' : 'Please answer all questions on this page') + '</span>'; }
+    if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); var inp = first.querySelector('input'); if (inp) inp.focus({ preventScroll: true }); }
+    return;
+  }
+  if (state.step < STEPS.length - 1) { state.step++; saveDraft(); go('quiz'); }
+  else finish();
+}
+function back() {
+  if (state.step > 0) { state.step--; saveDraft(); go('quiz'); }
+  else go('landing');
+}
+
+/* =====================================================================
+   SCORING
+   ===================================================================== */
+function computeResult() {
+  var a = state.answers, scores = {};
+  STAGES.forEach(function (s) {
+    var avg = (a[s.id + '_1'] + a[s.id + '_2'] + (6 - a[s.id + '_3'])) / 3;
+    scores[s.id] = toIndex(avg);
+  });
+  var fl = {}, sum = 0;
+  QB.forEach(function (q) { fl[q.id] = toIndex(a[q.id]); sum += a[q.id]; });
+  var fluency = toIndex(sum / QB.length);
+  var focus = ROLE_FOCUS[state.role] || ROLE_FOCUS.ae;
+  // Rank strongest -> weakest: higher score first; tie-break 1: less time drain = stronger;
+  // tie-break 2: stages that are typically a bigger time sink for this role rank as weaker.
+  var ranked = STAGES.map(function (s) { return s.id; }).sort(function (x, y) {
+    return (scores[y] - scores[x]) || (a[x + '_3'] - a[y + '_3']) || (focus.indexOf(y) - focus.indexOf(x));
+  });
+  var persona = personaFor(fluency);
+  return {
+    v: 1, mode: state.mode, role: state.role, name: state.name || '', date: new Date().toISOString(),
+    answers: JSON.parse(JSON.stringify(a)), stageScores: scores, fluency: fluency, fluencyItems: fl,
+    persona: persona.name, top: ranked.slice(0, 2), bottom: ranked.slice(-2).reverse(),
+    breakout: ranked[ranked.length - 1], breakoutTrack: TRACKS[ranked[ranked.length - 1]].name, habit: ''
+  };
+}
+
+function finish() {
+  var r = computeResult();
+  if (state.mode === 'checkin') {
+    var prev = store.get('checkin');
+    if (prev && prev.habit) r.priorHabit = prev.habit;
+  }
+  store.set(state.mode, r);
+  var hist = store.get('history') || []; hist.push(r); if (hist.length > 30) hist = hist.slice(-30); store.set('history', hist);
+  store.del('draft');
+  state.result = r;
+  setProgress(100);
+  go('results');
+}
+
+function saveResult(r) {
+  store.set(r.mode, r);
+  var hist = store.get('history') || [];
+  for (var i = hist.length - 1; i >= 0; i--) { if (hist[i].date === r.date) { hist[i] = r; break; } }
+  store.set('history', hist);
+}
+
+/* =====================================================================
+   RADAR (inline SVG)
+   ===================================================================== */
+function radarSVG(r, base) {
+  var compact = (window.innerWidth || 1024) < 600;
+  var W = compact ? 440 : 560, H = compact ? 440 : 440, cx = W / 2, cy = H / 2 + 4, R = compact ? 118 : 145, n = STAGES.length;
+  var fs = compact ? 17 : 15, fs2 = compact ? 16 : 14;
+  function pt(i, v) { var ang = -Math.PI / 2 + i * 2 * Math.PI / n; var rr = R * v / 100; return [cx + rr * Math.cos(ang), cy + rr * Math.sin(ang)]; }
+  var out = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-labelledby="radarTitle radarDesc"><title id="radarTitle">Workflow strengths radar chart</title><desc id="radarDesc">' +
+    STAGES.map(function (s) { return esc(stageLabel(s.id, r.role)) + ': ' + r.stageScores[s.id] + (base ? ' (baseline ' + base.stageScores[s.id] + ')' : ''); }).join('; ') + '</desc>';
+  [20, 40, 60, 80, 100].forEach(function (lvl) {
+    var pts = STAGES.map(function (_, i) { return pt(i, lvl).map(function (x) { return x.toFixed(1); }).join(','); }).join(' ');
+    out += '<polygon points="' + pts + '" fill="' + (lvl === 100 ? '#f8fafc' : 'none') + '" stroke="#e2e8f0" stroke-width="1"/>';
+  });
+  STAGES.forEach(function (_, i) { var p = pt(i, 100); out += '<line x1="' + cx + '" y1="' + cy + '" x2="' + p[0].toFixed(1) + '" y2="' + p[1].toFixed(1) + '" stroke="#e2e8f0"/>'; });
+  [50, 100].forEach(function (lvl) { var p = pt(0, lvl); out += '<text x="' + (p[0] + 5) + '" y="' + (p[1] + 4) + '" font-size="11" fill="#94a3b8">' + lvl + '</text>'; });
+  function poly(res, fill, stroke, dash) {
+    var pts = STAGES.map(function (s, i) { return pt(i, Math.max(res.stageScores[s.id], 3)).map(function (x) { return x.toFixed(1); }).join(','); }).join(' ');
+    return '<polygon points="' + pts + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2.5" stroke-linejoin="round"' + (dash ? ' stroke-dasharray="6 5"' : '') + '/>';
+  }
+  if (base) out += poly(base, 'rgba(148,163,184,.12)', '#94a3b8', true);
+  out += poly(r, 'rgba(79,70,229,.18)', '#4f46e5', false);
+  STAGES.forEach(function (s, i) { var p = pt(i, Math.max(r.stageScores[s.id], 3)); out += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="4.5" fill="#fff" stroke="#4f46e5" stroke-width="2.5"/>'; });
+  STAGES.forEach(function (s, i) {
+    var p = pt(i, 122), ang = -Math.PI / 2 + i * 2 * Math.PI / n, cos = Math.cos(ang);
+    var anchor = Math.abs(cos) < 0.2 ? 'middle' : (cos > 0 ? 'start' : 'end');
+    var name = stageShort(s.id, r.role), parts = name.split(' & ');
+    var lines = (compact && parts.length === 2 && anchor !== 'middle') ? [parts[0] + ' &', parts[1]] : [name];
+    var lh = fs + 2, sin = Math.sin(ang);
+    var dy = sin < -0.9 ? -6 - (lines.length - 1) * lh : (sin > 0.9 ? 14 : -(lines.length - 1) * lh / 2);
+    var isTop = r.top.indexOf(s.id) >= 0, isLow = r.bottom.indexOf(s.id) >= 0;
+    var color = isTop ? '#0f766e' : (isLow ? '#b45309' : '#334155');
+    var x = p[0].toFixed(1);
+    out += '<text x="' + x + '" y="' + (p[1] + dy).toFixed(1) + '" text-anchor="' + anchor + '" font-size="' + fs + '" font-weight="600" fill="' + color + '" font-family="Inter, system-ui, sans-serif">' + esc(lines[0]) +
+      (lines[1] ? '<tspan x="' + x + '" dy="' + lh + '">' + esc(lines[1]) + '</tspan>' : '') +
+      '<tspan x="' + x + '" dy="' + (fs2 + 4) + '" font-size="' + fs2 + '" font-weight="700" fill="' + color + '">' + r.stageScores[s.id] + (base ? deltaTxt(r.stageScores[s.id] - base.stageScores[s.id]) : '') + '</tspan></text>';
+  });
+  return out + '</svg>';
+}
+function deltaTxt(d) { return d === 0 ? ' (\u00b10)' : ' (' + (d > 0 ? '+' : '\u2212') + Math.abs(d) + ')'; }
+function deltaChip(d) { var c = d > 0 ? 'up' : (d < 0 ? 'down' : 'flat'); return '<span class="delta ' + c + '">' + (d > 0 ? '+' : d < 0 ? '\u2212' : '\u00b1') + Math.abs(d) + '</span>'; }
+
+function gaugeSVG(v) {
+  var r = 46, c = 2 * Math.PI * r, off = c * (1 - v / 100);
+  return '<svg class="gauge" viewBox="0 0 120 120" role="img" aria-label="AI fluency ' + v + ' out of 100"><circle cx="60" cy="60" r="' + r + '" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="10"/>' +
+    '<circle cx="60" cy="60" r="' + r + '" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-dasharray="' + c.toFixed(1) + '" stroke-dashoffset="' + off.toFixed(1) + '" transform="rotate(-90 60 60)"/>' +
+    '<text x="60" y="62" text-anchor="middle" font-size="30" font-weight="800" fill="#fff" font-family="Inter, system-ui, sans-serif">' + v + '</text>' +
+    '<text x="60" y="82" text-anchor="middle" font-size="11" fill="rgba(255,255,255,.8)" font-family="Inter, system-ui, sans-serif">AI fluency</text></svg>';
+}
+
+/* =====================================================================
+   RENDER: RESULTS
+   ===================================================================== */
+function getBaselineFor(r) { if (r.mode !== 'checkin') return null; var b = store.get('baseline'); return (b && b.date !== r.date) ? b : null; }
+
+function renderResults() {
+  var r = state.result; if (!r) { go('landing'); return; }
+  setProgress(100);
+  var role = roleById(r.role), base = getBaselineFor(r), persona = personaFor(r.fluency);
+  var hi = r.top, lo = r.bottom;
+  var ladder = PERSONAS.map(function (p) { return '<span class="' + (p.name === persona.name ? 'on' : '') + '">' + esc(p.name) + '</span>'; }).join('');
+  var fluItems = QB.map(function (q) { var v = r.fluencyItems[q.id]; return '<div class="flu-item"><div class="row"><span>' + esc(q.dim) + '</span><b>' + v + '</b></div><div class="bar"><i style="width:' + Math.max(v, 3) + '%"></i></div></div>'; }).join('');
+  var guard = '';
+  if (r.answers.f_verify <= 2 || r.answers.f_data <= 2) {
+    guard = '<div class="guard">' + '<b>Guardrail first:</b> ' +
+      (r.answers.f_verify <= 2 ? 'build the habit of checking AI facts, numbers and names against the source before anything reaches a customer. ' : '') +
+      (r.answers.f_data <= 2 ? 'Ask your manager or enablement team which data is approved for which AI tools before you paste customer information.' : '') + '</div>';
+  }
+
+  var compareCard = '';
+  if (r.mode === 'checkin') {
+    if (base) {
+      var dF = r.fluency - base.fluency;
+      var stageDeltas = STAGES.map(function (s) { return { id: s.id, d: r.stageScores[s.id] - base.stageScores[s.id] }; });
+      var best = stageDeltas.slice().sort(function (x, y) { return y.d - x.d; })[0];
+      var bd = base.bottom[0];
+      compareCard = '<section class="card span-12" aria-labelledby="cmpH"><span class="eyebrow teal">Progress since baseline</span><h3 id="cmpH" style="margin-top:4px">Baseline ' + esc(fmtDate(base.date)) + ' \u2192 Check-in ' + esc(fmtDate(r.date)) + '</h3>' +
+        (base.role !== r.role ? '<p class="card-sub">Note: your baseline was taken as ' + esc(roleById(base.role).label) + ', so some questions were worded differently.</p>' : '') +
+        '<div class="compare-grid">' +
+          '<div class="kpi"><div class="lbl">AI fluency</div><div class="val">' + base.fluency + ' \u2192 ' + r.fluency + ' ' + deltaChip(dF) + '</div><div class="sub">' + esc(base.persona) + ' \u2192 ' + esc(r.persona) + '</div></div>' +
+          '<div class="kpi"><div class="lbl">Biggest gain</div><div class="val" style="font-size:18px">' + esc(stageShort(best.id, r.role)) + ' ' + deltaChip(best.d) + '</div><div class="sub">' + (best.d > 0 ? 'Keep doing what you\u2019re doing here.' : 'No stage improved yet; that\u2019s useful to know.') + '</div></div>' +
+          '<div class="kpi"><div class="lbl">Baseline focus area</div><div class="val" style="font-size:18px">' + esc(stageShort(bd, r.role)) + ' ' + deltaChip(r.stageScores[bd] - base.stageScores[bd]) + '</div><div class="sub">' + (base.habit ? 'Your habit: \u201c' + esc(base.habit) + '\u201d' : 'No habit was saved with your baseline.') + '</div></div>' +
+        '</div><p class="small muted" style="margin-top:12px">The dashed grey shape on the radar is your baseline. Scores are self-ratings, so treat changes as a conversation starter, not a precise measurement.</p></section>';
+    } else {
+      compareCard = '<section class="notice info span-12">' + I.refresh + '<div>No baseline was found on this device, so there\u2019s nothing to compare against yet. This check-in is saved and future check-ins will compare with your <b>baseline</b> if you take one on this device.</div></section>';
+    }
+  }
+
+  var stageRows = STAGES.map(function (s) {
+    var v = r.stageScores[s.id], isLow = lo.indexOf(s.id) >= 0;
+    return '<div class="stage-row' + (isLow ? ' low' : '') + '"><div class="top"><b>' + esc(stageLabel(s.id, r.role)) + '</b><span><span class="score">' + v + '</span>' + (base ? deltaChip(v - base.stageScores[s.id]) : '') + '</span></div><div class="bar"><i style="width:' + Math.max(v, 3) + '%"></i></div></div>';
+  }).join('');
+
+  function ucList(stage, n) {
+    return '<ul class="uc">' + useCases(stage, r.role).slice(0, n).map(function (u) { return '<li>' + I.sparkle + '<div><b>' + esc(u[0]) + '</b><span>' + esc(u[1]) + '</span></div></li>'; }).join('') + '</ul>';
+  }
+  var supers = hi.map(function (sid) {
+    return '<div class="stage-block amplify"><h4>' + esc(stageLabel(sid, r.role)) + '<span class="score" style="color:var(--teal)">' + r.stageScores[sid] + '</span></h4>' +
+      '<p class="lead">' + (r.stageScores[sid] >= 60 ? 'You\u2019re strong here. Use AI to scale it, and share what works with your team.' : 'Your relative strength right now. Use AI to build on it.') + '</p>' + ucList(sid, 2) + '</div>';
+  }).join('');
+  var timeback = lo.map(function (sid, i) {
+    return '<div class="stage-block"><h4>' + esc(stageLabel(sid, r.role)) + '<span class="score" style="color:var(--amber)">' + r.stageScores[sid] + '</span></h4>' +
+      '<p class="lead">' + (i === 0 ? 'Your biggest opportunity. Let AI do the first draft so you can focus on judgment.' : 'Your second opportunity area.') + '</p>' + ucList(sid, 3) +
+      '<details class="prompt no-print"' + (i === 0 ? ' open' : '') + '><summary>Try this starter prompt</summary><pre>' + esc(promptFor(sid, r.role)) + '</pre>' +
+      '<button class="btn secondary copy-prompt" style="min-height:36px;padding:6px 12px;font-size:13.5px" data-act="copyprompt" data-stage="' + sid + '">' + I.copy + 'Copy prompt</button></details></div>';
+  }).join('');
+
+  var track = TRACKS[r.breakout], alt = TRACKS[lo[1]];
+  var habits = habitsFor(r.breakout, r.role);
+  var isCustom = r.habit && habits.indexOf(r.habit) < 0;
+  var habitOpts = habits.map(function (h, i) {
+    var on = r.habit === h;
+    return '<label class="choice habit' + (on ? ' is-chosen' : '') + '"><input type="radio" name="habit" value="' + i + '"' + (on ? ' checked' : '') + '><span>' + esc(h) + '</span></label>';
+  }).join('') +
+    '<label class="choice habit' + (isCustom ? ' is-chosen' : '') + '"><input type="radio" name="habit" value="custom"' + (isCustom ? ' checked' : '') + '><span>Write my own habit</span></label>' +
+    '<div id="customHabitWrap" class="no-print" style="' + (isCustom ? '' : 'display:none') + '"><label class="sr-only" for="customHabit">My own 30-day AI habit</label><input id="customHabit" class="input" maxlength="160" placeholder="e.g. Every Tuesday, use AI to prep my top 3 deal reviews" value="' + esc(isCustom ? r.habit : '') + '"></div>';
+
+  var snapCard = '<section class="card snap span-12" aria-label="Snapshot">' +
+    '<div><span class="lbl" style="color:var(--teal)">' + I.star + 'Superpowers</span><div class="chips">' + hi.map(function (s) { return '<span class="chip good">' + esc(stageShort(s, r.role)) + ' \u00b7 ' + r.stageScores[s] + '</span>'; }).join('') + '</div></div>' +
+    '<div><span class="lbl" style="color:var(--amber)">' + I.hourglass + 'AI can give you time back</span><div class="chips">' + lo.map(function (s) { return '<span class="chip amber">' + esc(stageShort(s, r.role)) + ' \u00b7 ' + r.stageScores[s] + '</span>'; }).join('') + '</div></div>' +
+    '<div><span class="lbl" style="color:var(--accent-700)">' + TRACK_ICON[r.breakout] + 'Your breakout</span><div class="track">\u201c' + esc(TRACKS[r.breakout].name) + '\u201d</div><div class="xs muted" style="margin-top:2px">Bring one real account or deal</div></div>' +
+  '</section>';
+  var who = r.name ? esc(r.name) + '\u2019s results' : 'Your results';
+
+  $app.innerHTML =
+    '<div class="res-head"><div><span class="eyebrow">' + esc(CONFIG.eventLabel) + ' \u00b7 ' + modeLabel(r.mode) + '</span><h1>' + who + '</h1><p class="muted">' + esc(role.label) + ' \u00b7 ' + esc(fmtDate(r.date)) + '</p></div>' +
+      '<span class="pill amber no-print">' + I.camera.replace('<svg', '<svg style="width:14px;height:14px"') + ' Screenshot this and bring it to your breakout</span></div>' +
+    '<div class="res-grid">' +
+      compareCard + snapCard +
+      '<section class="card persona span-12" aria-labelledby="personaH">' +
+        '<div class="persona-top"><div style="flex:1;min-width:240px"><span class="eyebrow">Your AI persona</span><h2 id="personaH">' + esc(persona.name) + '</h2><p>' + esc(persona.desc) + '</p></div>' + gaugeSVG(r.fluency) + '</div>' +
+        '<div class="ladder" aria-label="Persona levels">' + ladder + '</div>' +
+        '<div class="flu-grid">' + fluItems + '</div>' +
+        '<div class="next-step"><b>Your next step:</b> ' + esc(persona.next) + '</div>' + guard +
+      '</section>' +
+      '<section class="card span-7" aria-labelledby="radarH"><h3 id="radarH">Your GTM workflow profile</h3><p class="card-sub">Strength index (0\u2013100) per workflow stage, based on your self-ratings. Higher = stronger and less of a time drain.</p>' +
+        '<div class="radar-wrap">' + radarSVG(r, base) + '</div>' +
+        '<div class="legend"><span><i style="background:#4f46e5"></i>' + (base ? 'Check-in' : 'You today') + '</span>' + (base ? '<span><i style="background:repeating-linear-gradient(90deg,#94a3b8 0 5px,transparent 5px 8px)"></i>Baseline</span>' : '') + '<span style="color:#0f766e;font-weight:600">Superpowers</span><span style="color:#b45309;font-weight:600">Time-back areas</span></div>' +
+      '</section>' +
+      '<section class="card span-5" aria-labelledby="scoresH"><h3 id="scoresH">Scores by stage</h3><div class="stage-list">' + stageRows + '</div>' +
+        '<p class="xs muted" style="margin-top:14px">How it\u2019s calculated: the two strength statements plus the reversed \u201ctime check\u201d for each stage, averaged and scaled to 0\u2013100. It\u2019s a self-reflection tool, not a performance rating.</p></section>' +
+      '<section class="card span-12 ins-col" aria-labelledby="supH"><h3 id="supH"><span class="ic good">' + I.star + '</span>Your superpowers</h3><p class="card-sub">Your two strongest workflow stages. Use AI to scale what already works.</p><div class="pair">' + supers + '</div></section>' +
+      '<section class="card span-12 ins-col" aria-labelledby="tbH"><h3 id="tbH"><span class="ic amber">' + I.hourglass + '</span>Where AI can give you time back</h3><p class="card-sub">Your two biggest friction points, and how your AI assistant can help.</p><div class="pair">' + timeback + '</div>' +
+        '<p class="xs muted" style="margin-top:12px">' + I.shield.replace('<svg', '<svg style="width:13px;height:13px;vertical-align:-2px"') + ' ' + esc(CONFIG.dataPolicyNote) + '</p></section>' +
+      '<section class="card breakout span-12" aria-labelledby="boH"><div class="breakout-top"><span class="track-badge">' + TRACK_ICON[r.breakout] + '</span><div style="flex:1;min-width:220px">' +
+        '<span class="eyebrow">Your recommended breakout</span><h2 id="boH">\u201c' + esc(track.name) + '\u201d</h2><p class="muted">' + esc(track.desc) + '</p></div></div>' +
+        '<div class="bring">' + I.briefcase + '<div><b>Bring:</b> one real account or deal you\u2019re working on now (plus any notes you\u2019re allowed to use). You\u2019ll leave with a finished work product, not just a demo.</div></div>' +
+        (r.stageScores[r.top[0]] === r.stageScores[r.breakout] ? '<p class="alt"><b>Your scores are even across stages,</b> so this pick is based on what is typically the biggest time sink for your role. Choose the breakout that feels most useful to you.</p>' : '') +
+        '<p class="alt">Also a good fit: <b>\u201c' + esc(alt.name) + '\u201d</b> (' + esc(stageShort(lo[1], r.role)) + ').</p></section>' +
+      '<section class="card span-12" aria-labelledby="habitH"><span class="eyebrow teal">Commit</span><h3 id="habitH" style="margin-top:4px">My 30-day AI habit</h3>' +
+        '<p class="card-sub">Pick one small habit tied to <b>' + esc(stageLabel(r.breakout, r.role)) + '</b>. Small and repeatable beats big and occasional. We\u2019ll check in at ' + esc(daysLabel()) + '.</p>' +
+        (r.priorHabit ? '<p class="small" style="margin-top:8px">Your previous check-in habit: \u201c' + esc(r.priorHabit) + '\u201d</p>' : '') +
+        '<div class="habits' + (r.habit ? ' has-choice' : '') + '" role="radiogroup" aria-labelledby="habitH">' + habitOpts + '</div><div class="saved-msg" id="habitSaved" aria-live="polite">' + (r.habit ? 'Saved \u2713' : '') + '</div></section>' +
+      '<div class="notice span-12">' + I.camera + '<div><b>Take a screenshot and bring it to your breakout.</b> Or use \u201cPrint / Save as PDF\u201d below. Your results are also saved in this browser.</div></div>' +
+      '<div class="actions span-12 no-print">' +
+        '<button class="btn primary" data-act="print">' + I.printer + 'Print / Save as PDF</button>' +
+        '<button class="btn secondary" data-act="copy">' + I.copy + 'Copy results summary</button>' +
+        (CONFIG.resultsEndpoint ? '<button class="btn secondary" data-act="submit">' + I.send + 'Send my results</button>' : '') +
+        '<button class="btn secondary" data-act="retake">' + I.refresh + 'Retake</button>' +
+        '<button class="btn ghost" data-act="home">' + I.home + 'Home</button>' +
+      '</div>' +
+      '<p class="print-only xs muted span-12">' + esc(CONFIG.appTitle) + ' \u00b7 ' + esc(CONFIG.eventLabel) + '</p>' +
+    '</div>';
+}
+
+function summaryText(r) {
+  var base = getBaselineFor(r), L = [];
+  L.push(CONFIG.appTitle + ' \u2014 ' + CONFIG.eventLabel);
+  L.push(modeLabel(r.mode) + ' \u00b7 ' + roleById(r.role).label + ' \u00b7 ' + fmtDate(r.date) + (r.name ? ' \u00b7 ' + r.name : ''));
+  L.push('');
+  L.push('AI persona: ' + r.persona + ' (AI fluency ' + r.fluency + '/100' + (base ? ', baseline ' + base.fluency : '') + ')');
+  L.push('');
+  L.push('Workflow strength index (0\u2013100):');
+  STAGES.forEach(function (s) { L.push('\u2022 ' + stageLabel(s.id, r.role) + ': ' + r.stageScores[s.id] + (base ? deltaTxt(r.stageScores[s.id] - base.stageScores[s.id]) : '')); });
+  L.push('');
+  L.push('Superpowers: ' + r.top.map(function (s) { return stageLabel(s, r.role); }).join(', '));
+  L.push('Where AI can give me time back: ' + r.bottom.map(function (s) { return stageLabel(s, r.role); }).join(', '));
+  L.push('Recommended breakout: \u201c' + TRACKS[r.breakout].name + '\u201d (bring one real account or deal)');
+  L.push('My 30-day AI habit: ' + (r.habit || '(not chosen yet)'));
+  return L.join('\n');
+}
+
+function copyText(txt, okMsg) {
+  function fallback() {
+    var ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch (e) { }
+    document.body.removeChild(ta); toast(ok ? okMsg : 'Couldn\u2019t copy automatically. Please select and copy manually.');
+  }
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(function () { toast(okMsg); }, fallback);
+  else fallback();
+}
+
+/* =====================================================================
+   FACILITATOR VIEW (?facilitator=1)
+   ===================================================================== */
+function allLocalResults() { return store.get('history') || []; }
+var CSV_COLS = ['mode', 'date', 'name', 'role', 'persona', 'fluency'].concat(STAGES.map(function (s) { return 'score_' + s.id; }), ['top_1', 'top_2', 'weakest_1', 'weakest_2', 'breakout', 'habit'], STAGES.reduce(function (a, s) { return a.concat([s.id + '_1', s.id + '_2', s.id + '_3']); }, []), QB.map(function (q) { return q.id; }));
+function toRow(r) {
+  var m = { mode: r.mode, date: r.date, name: r.name, role: r.role, persona: r.persona, fluency: r.fluency, top_1: r.top[0], top_2: r.top[1], weakest_1: r.bottom[0], weakest_2: r.bottom[1], breakout: TRACKS[r.breakout].name, habit: r.habit };
+  STAGES.forEach(function (s) { m['score_' + s.id] = r.stageScores[s.id]; });
+  Object.keys(r.answers).forEach(function (k) { m[k] = r.answers[k]; });
+  return CSV_COLS.map(function (c) { var v = m[c] == null ? '' : String(m[c]); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(',');
+}
+function toCSV(list) { return [CSV_COLS.join(',')].concat(list.map(toRow)).join('\n'); }
+function download(name, text, type) {
+  var blob = new Blob([text], { type: type }); var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+
+function renderFacilitator() {
+  setProgress(0);
+  var list = allLocalResults();
+  var rows = list.length ? list.slice().reverse().map(function (r) {
+    return '<tr><td>' + esc(modeLabel(r.mode)) + '</td><td>' + esc(fmtDate(r.date)) + '</td><td>' + esc(roleById(r.role).short) + '</td><td>' + esc(r.persona) + ' (' + r.fluency + ')</td><td>' + esc(stageShort(r.bottom[0], r.role)) + '</td><td>' + esc(TRACKS[r.breakout].name) + '</td></tr>';
+  }).join('') : '<tr><td colspan="6" class="muted">No results saved in this browser yet. Take the assessment once to see what gets exported.</td></tr>';
+  var appsScript = [
+    'function doPost(e) {',
+    '  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(\'Results\');',
+    '  var r = JSON.parse(e.postData.contents);',
+    '  sheet.appendRow([new Date(), r.mode, r.role, r.persona, r.fluency,',
+    '    r.stageScores.research, r.stageScores.prospecting, r.stageScores.discovery,',
+    '    r.stageScores.deal, r.stageScores.pipeline, r.stageScores.growth,',
+    '    r.bottom[0], r.breakoutTrack, r.habit]);',
+    '  return ContentService.createTextOutput(\'ok\');',
+    '}'
+  ].join('\n');
+
+  $app.innerHTML = '<div class="narrow fac stack">' +
+    '<div class="q-head"><span class="eyebrow">Facilitator view</span><h1>How results roll up</h1><p>This page is only visible with <code>?facilitator=1</code>. It reads <b>this browser only</b>. There is no shared database behind this app, so no organization-wide numbers are shown here.</p></div>' +
+    '<div class="notice">' + I.shield + '<div><b>Org-wide aggregation needs a collection step.</b> Every participant\u2019s results live in their own browser (localStorage). To see patterns across the full SKO audience, choose one of the options below <i>before</i> sending the link out.</div></div>' +
+    '<section class="card"><h3>Collection options</h3><ol>' +
+      '<li><b>Simplest: short Google Form / survey.</b> Ask for role, AI persona, fluency score, weakest stage and recommended breakout (all shown on the results screen). Fastest to set up; no code changes.</li>' +
+      '<li><b>Automatic: Google Sheet via Apps Script.</b> Deploy the script below as a web app, paste its URL into <code>CONFIG.resultsEndpoint</code>. A \u201cSend my results\u201d button then appears on the results page (opt-in, one click).</li>' +
+      '<li><b>Full: a small backend</b> (e.g., a serverless function + database) if you need SSO, dedupe or a live dashboard.</li>' +
+    '</ol>' +
+    '<details class="prompt" style="margin-top:12px"><summary>Apps Script example (option 2)</summary><pre>' + esc(appsScript) + '</pre></details>' +
+    '<p class="small muted" style="margin-top:10px">The POST body is the same JSON as the export below (one result object). Requests are sent as <code>text/plain</code> with <code>no-cors</code>, so the browser can\u2019t confirm delivery. Check the sheet.</p></section>' +
+    '<section class="card"><h3>What to roll up for AI Day planning</h3><div class="table-scroll"><table><thead><tr><th>View</th><th>Fields</th><th>Use it to\u2026</th></tr></thead><tbody>' +
+      '<tr><td>Persona distribution</td><td><code>persona</code>, <code>role</code></td><td>Pitch the keynote at the right level; find Multipliers to seat as table coaches.</td></tr>' +
+      '<tr><td>Weakest stage by role</td><td><code>weakest_1</code> \u00d7 <code>role</code></td><td>Size and staff the 6 breakout rooms; tailor examples per role.</td></tr>' +
+      '<tr><td>Average stage index by role</td><td><code>score_*</code> \u00d7 <code>role</code></td><td>Heatmap of where each team loses time; prioritize enablement after SKO.</td></tr>' +
+      '<tr><td>Guardrail gaps</td><td><code>f_verify</code>, <code>f_data</code> \u2264 2</td><td>Decide how much data-policy and verification content to include.</td></tr>' +
+      '<tr><td>Habit commitments</td><td><code>habit</code>, <code>breakout</code></td><td>Plan 30-day nudges and manager follow-up.</td></tr>' +
+      '<tr><td>Baseline vs. check-in</td><td><code>mode</code>, <code>fluency</code>, <code>score_*</code></td><td>Measure change at ' + esc(daysLabel()) + '. Match people by name or email if you collect it.</td></tr>' +
+    '</tbody></table></div></section>' +
+    '<section class="card"><h3>Breakout tracks (weakest stage \u2192 room)</h3><div class="table-scroll"><table><thead><tr><th>Weakest stage</th><th>Breakout</th></tr></thead><tbody>' +
+      STAGES.map(function (s) { return '<tr><td>' + esc(s.label) + '</td><td><b>' + esc(TRACKS[s.id].name) + '</b><br><span class="muted">' + esc(TRACKS[s.id].desc) + '</span></td></tr>'; }).join('') +
+    '</tbody></table></div><p class="small muted" style="margin-top:10px">Scoring: each stage = mean of 2 strength items + reversed time-check item, scaled 0\u2013100. AI fluency = mean of ' + QB.length + ' Section B items, scaled 0\u2013100. Personas: ' + PERSONAS.map(function (p) { return p.name + ' \u2265 ' + p.min; }).join(', ') + '.</p></section>' +
+    '<section class="card"><h3>This browser\u2019s results (' + list.length + ')</h3><div class="table-scroll"><table><thead><tr><th>Type</th><th>Date</th><th>Role</th><th>Persona</th><th>Weakest</th><th>Breakout</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '<div class="actions" style="justify-content:flex-start;margin-top:14px">' +
+        '<button class="btn secondary" data-act="exportjson"' + (list.length ? '' : ' disabled') + '>' + I.download + 'Download JSON</button>' +
+        '<button class="btn secondary" data-act="exportcsv"' + (list.length ? '' : ' disabled') + '>' + I.download + 'Download CSV</button>' +
+        '<button class="btn secondary" data-act="copyjson"' + (list.length ? '' : ' disabled') + '>' + I.copy + 'Copy JSON</button>' +
+        '<button class="btn ghost" data-act="clearlocal"' + (list.length ? '' : ' disabled') + '>Clear this browser\u2019s data</button>' +
+      '</div></section>' +
+    '<p class="small muted">Edit event name, check-in cadence, data-policy wording and the optional endpoint in the <code>CONFIG</code> object at the top of the script.</p>' +
+    '<div><button class="btn primary" data-act="exitfac">' + I.home + 'Go to participant view</button></div>' +
+  '</div>';
+}
+
+/* =====================================================================
+   ROUTER + EVENTS
+   ===================================================================== */
+function render() {
+  if (state.screen === 'landing') renderLanding();
+  else if (state.screen === 'quiz') renderStep();
+  else if (state.screen === 'results') renderResults();
+  else if (state.screen === 'facilitator') renderFacilitator();
+}
+
+function startAssessment(mode) {
+  var base = store.get('baseline');
+  state.mode = mode; state.answers = {}; state.step = 0; state.result = null;
+  if (!state.role && base) state.role = base.role;
+  if (!state.name && base && base.name) state.name = base.name;
+  saveDraft(); go('quiz');
+}
+
+$app.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-act]'); if (!b) return;
+  handleAct(b.getAttribute('data-act'), b);
+});
+document.querySelector('.topbar').addEventListener('click', function (e) {
+  var b = e.target.closest('[data-act]'); if (b) handleAct(b.getAttribute('data-act'), b);
+});
+
+function handleAct(act, b) {
+  var r = state.result;
+  switch (act) {
+    case 'home': if (state.screen === 'facilitator') history.replaceState(null, '', location.pathname); go('landing'); break;
+    case 'start': startAssessment(b.getAttribute('data-mode')); break;
+    case 'resume': var d = store.get('draft'); if (d) { state.mode = d.mode; state.role = d.role; state.name = d.name || ''; state.answers = d.answers || {}; state.step = Math.min(d.step || 0, STEPS.length - 1); go('quiz'); } break;
+    case 'view': state.result = store.get(b.getAttribute('data-mode')); if (state.result) go('results'); break;
+    case 'next': next(); break;
+    case 'back': back(); break;
+    case 'print': window.print(); break;
+    case 'copy': copyText(summaryText(r), 'Results summary copied'); break;
+    case 'copyprompt': copyText(promptFor(b.getAttribute('data-stage'), r.role), 'Prompt copied'); break;
+    case 'retake': state.role = r ? r.role : state.role; startAssessment(r ? r.mode : 'baseline'); break;
+    case 'submit':
+      if (!CONFIG.resultsEndpoint) return;
+      fetch(CONFIG.resultsEndpoint, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(r) })
+        .then(function () { toast('Results sent. Thank you!'); }, function () { toast('Couldn\u2019t send. Please screenshot your results instead.'); });
+      break;
+    case 'exportjson': download('gtm-ai-assessment-results.json', JSON.stringify(allLocalResults(), null, 2), 'application/json'); break;
+    case 'exportcsv': download('gtm-ai-assessment-results.csv', toCSV(allLocalResults()), 'text/csv'); break;
+    case 'copyjson': copyText(JSON.stringify(allLocalResults(), null, 2), 'JSON copied'); break;
+    case 'clearlocal':
+      if (confirm('Delete all assessment results saved in this browser? This cannot be undone.')) { ['baseline', 'checkin', 'history', 'draft'].forEach(function (k) { store.del(k); }); renderFacilitator(); toast('Local data cleared'); }
+      break;
+    case 'exitfac': history.replaceState(null, '', location.pathname); go('landing'); break;
+  }
+}
+
+$app.addEventListener('change', function (e) {
+  var t = e.target;
+  if (t.name === 'role') {
+    state.role = t.value; saveDraft();
+    var f = t.closest('.q'); if (f) f.classList.remove('missing');
+    var c = document.getElementById('navCount'); if (c) c.textContent = answeredCount() + ' of ' + totalQuestions() + ' answered';
+    return;
+  }
+  if (t.name === 'habit') {
+    var r = state.result, wrap = document.getElementById('customHabitWrap');
+    if (t.value === 'custom') { wrap.style.display = ''; var ci = document.getElementById('customHabit'); ci.focus(); r.habit = ci.value.trim(); }
+    else { wrap.style.display = 'none'; r.habit = habitsFor(r.breakout, r.role)[+t.value]; }
+    $app.querySelectorAll('.habit').forEach(function (l) { l.classList.toggle('is-chosen', l.querySelector('input').checked); });
+    $app.querySelector('.habits').classList.toggle('has-choice', !!r.habit);
+    saveResult(r); document.getElementById('habitSaved').textContent = r.habit ? 'Saved \u2713' : 'Type your habit below, it saves automatically';
+    return;
+  }
+  if (t.type === 'radio' && t.closest('.q')) {
+    state.answers[t.name] = +t.value; saveDraft();
+    var fs = t.closest('.q'); fs.classList.add('answered'); fs.classList.remove('missing');
+    var c2 = document.getElementById('navCount'); if (c2) c2.textContent = answeredCount() + ' of ' + totalQuestions() + ' answered';
+    // gently bring the next unanswered question into view (pointer users only)
+    if (!t.matches(':focus-visible')) {
+      var all = Array.prototype.slice.call($app.querySelectorAll('.q[data-qid]'));
+      var nextQ = all.slice(all.indexOf(fs) + 1).filter(function (x) { return !x.classList.contains('answered'); })[0];
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (nextQ) setTimeout(function () { nextQ.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }, 120);
+    }
+  }
+});
+$app.addEventListener('input', function (e) {
+  if (e.target.id === 'nameInput') { state.name = e.target.value.trim(); saveDraft(); }
+  if (e.target.id === 'customHabit') {
+    var r = state.result; r.habit = e.target.value.trim(); saveResult(r);
+    $app.querySelector('.habits').classList.toggle('has-choice', !!r.habit);
+    document.getElementById('habitSaved').textContent = r.habit ? 'Saved \u2713' : '';
+  }
+});
+$app.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && state.screen === 'quiz' && (e.target.id === 'nameInput' || (e.target.type === 'radio' && e.target.closest('.q')))) { e.preventDefault(); next(); }
+});
+
+var _rz, _wasCompact = window.innerWidth < 600;
+window.addEventListener('resize', function () {
+  clearTimeout(_rz); _rz = setTimeout(function () {
+    var c = window.innerWidth < 600; if (c === _wasCompact) return; _wasCompact = c;
+    if (state.screen === 'results' && state.result) { var w = $app.querySelector('.radar-wrap'); if (w) w.innerHTML = radarSVG(state.result, getBaselineFor(state.result)); }
+  }, 150);
+});
+
+/* Init */
+document.title = CONFIG.appTitle + ' \u00b7 ' + CONFIG.eventLabel;
+document.getElementById('eventPill').textContent = CONFIG.eventLabel;
+document.getElementById('brandTitle').textContent = CONFIG.appTitle;
+if (params.get('facilitator') === '1') state.screen = 'facilitator';
+render();
+
+// test hook (harmless): expose read-only info for automated checks
+window.__GTM_ASSESSMENT__ = { STEPS: STEPS, total: totalQuestions(), state: state };
+})();
+</script>
+</body>
+</html>
